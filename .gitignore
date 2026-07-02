@@ -1,0 +1,7 @@
+# Descargas del editor (ZIP exportado por "Descargar versión final")
+*.zip
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
