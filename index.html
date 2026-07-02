@@ -815,9 +815,14 @@ requestAnimationFrame(draw);
     hoverPlus.id = 'lect-plus';
     hoverPlus.textContent = '+';
     hoverPlus.title = 'Insertar un componente acá';
-    hoverPlus.style.cssText = 'position:fixed;z-index:65;display:none;width:28px;height:28px;border-radius:50%;border:1px solid var(--r-acc2,#8f9bff);background:rgba(58,60,255,.92);color:#fff;font:400 18px/1 Helvetica,Arial,sans-serif;cursor:pointer;padding:0;box-shadow:0 2px 10px rgba(0,0,0,.45)';
-    hoverPlus.addEventListener('mouseenter', function () { hoverPlus._over = true; });
-    hoverPlus.addEventListener('mouseleave', function () { hoverPlus._over = false; });
+    hoverPlus.style.cssText = 'position:fixed;z-index:65;display:none;width:32px;height:32px;border-radius:50%;border:1px solid var(--r-acc2,#8f9bff);background:rgba(58,60,255,.95);color:#fff;font:400 21px/1 Helvetica,Arial,sans-serif;cursor:pointer;padding:0;box-shadow:0 2px 12px rgba(0,0,0,.5)';
+    // Hide with a cancelable delay, so moving the pointer from a block toward the
+    // "+" (across the empty gutter) doesn't make it vanish before you can click it.
+    var hideTimer = null;
+    function scheduleHide() { clearTimeout(hideTimer); hideTimer = setTimeout(function () { hoverPlus.style.display = 'none'; }, 500); }
+    function cancelHide() { clearTimeout(hideTimer); }
+    hoverPlus.addEventListener('mouseenter', cancelHide);
+    hoverPlus.addEventListener('mouseleave', scheduleHide);
     hoverPlus.addEventListener('click', function (e) {
       e.preventDefault(); e.stopPropagation();
       if (!hoverSection) return;
@@ -827,21 +832,23 @@ requestAnimationFrame(draw);
     document.body.appendChild(hoverPlus);
     root.addEventListener('mousemove', function (e) {
       if (!editMode) { hoverPlus.style.display = 'none'; return; }
-      if (hoverPlus._over) return;
       var section = e.target && e.target.closest ? e.target.closest('section[id]') : null;
-      if (!section || !root.contains(section)) { hoverPlus.style.display = 'none'; return; }
+      // Off any section (e.g. crossing the left gutter toward the "+"): keep it
+      // visible briefly instead of hiding immediately.
+      if (!section || !root.contains(section)) { scheduleHide(); return; }
       var blocks = insertableChildren(section), ref = null, refRect = null;
       for (var i = 0; i < blocks.length; i++) {
         var rct = blocks[i].getBoundingClientRect();
         if (e.clientY < rct.bottom) { ref = blocks[i]; refRect = rct; break; }
       }
-      if (!ref) { hoverPlus.style.display = 'none'; return; }
+      if (!ref) { scheduleHide(); return; }
+      cancelHide();
       hoverSection = section; hoverRefNode = ref;
-      hoverPlus.style.left = Math.max(6, refRect.left - 34) + 'px';
-      hoverPlus.style.top = (refRect.top - 2) + 'px';
+      hoverPlus.style.left = Math.max(6, refRect.left - 40) + 'px';
+      hoverPlus.style.top = Math.max(6, refRect.top - 4) + 'px';
       hoverPlus.style.display = 'block';
     });
-    root.addEventListener('mouseleave', function () { if (!hoverPlus._over) hoverPlus.style.display = 'none'; });
+    root.addEventListener('mouseleave', scheduleHide);
   }
 
   function applyEditMode(root) {
