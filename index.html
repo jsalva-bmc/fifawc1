@@ -198,6 +198,7 @@ requestAnimationFrame(draw);
   var txtBar = null;
   var curTxt = null;
   var avIO = null;
+  var hoverPlus = null, hoverRefNode = null, hoverSection = null;
 
   function watchAV(scope) {
     if (!('IntersectionObserver' in window)) return;
@@ -707,18 +708,31 @@ requestAnimationFrame(draw);
       document.addEventListener('mousedown', outside);
     }, 0);
   }
-  function addSectionBlock(root, section, kind) {
+  // A stable identifier for any block, so we can remember *where* an inserted
+  // component sits relative to its neighbours (used for session replay ordering).
+  function blockKey(el) {
+    return el.getAttribute('data-fig') || el.getAttribute('data-blk') || el.getAttribute('data-txt-key') || null;
+  }
+  function findByKey(section, key) {
+    if (!key) return null;
+    return qs(section, '[data-fig="' + key + '"]') || qs(section, '[data-blk="' + key + '"]') || qs(section, '[data-txt-key="' + key + '"]');
+  }
+  // Insert a new component before refNode (any block), or at the end of the
+  // section (before its inserter row) when refNode is null.
+  function insertBlockAt(root, section, kind, refNode) {
     var aid = newAid('blk_');
     var el = blockSkeleton(kind, aid);
-    var row = qs(section, '[data-inserter]');
-    if (row) section.insertBefore(el, row); else section.appendChild(el);
+    if (refNode && refNode.parentNode === section) section.insertBefore(el, refNode);
+    else { var row = qs(section, '[data-inserter]'); if (row) section.insertBefore(el, row); else section.appendChild(el); }
     var listKey = 'fwcL_blocks_' + section.id;
     var list = []; try { list = JSON.parse(localStorage.getItem(listKey) || '[]'); } catch (e) {}
-    list.push({ kind: kind, aid: aid });
+    list.push({ kind: kind, aid: aid, before: refNode ? blockKey(refNode) : null });
     try { localStorage.setItem(listKey, JSON.stringify(list)); } catch (e) {}
     if (kind === 'texto') setupEditableText(root); else setupFigures(root);
     applyEditMode(root);
+    return el;
   }
+  function addSectionBlock(root, section, kind) { return insertBlockAt(root, section, kind, null); }
   function addNewSection(root) {
     var main = qs(root, 'main');
     if (!main) return;
@@ -744,7 +758,12 @@ requestAnimationFrame(draw);
       var list = []; try { list = JSON.parse(localStorage.getItem('fwcL_blocks_' + section.id) || '[]'); } catch (e) {}
       list.forEach(function (item) {
         if (qs(section, '[data-fig="' + item.aid + '"], [data-blk="' + item.aid + '"]')) return;
-        section.appendChild(blockSkeleton(item.kind, item.aid));
+        var el = blockSkeleton(item.kind, item.aid);
+        var ref = item.before ? findByKey(section, item.before) : null;
+        var inserter = qs(section, '[data-inserter]');
+        if (ref && ref.parentNode === section) section.insertBefore(el, ref);
+        else if (inserter) section.insertBefore(el, inserter);
+        else section.appendChild(el);
       });
     });
   }
@@ -783,6 +802,48 @@ requestAnimationFrame(draw);
     }
   }
 
+  // Direct child blocks of a section that a new component can be inserted before.
+  function insertableChildren(section) {
+    return qsa(section, ':scope > h1, :scope > h2, :scope > h3, :scope > p, :scope > figure, :scope > [data-blk]');
+  }
+  // Floating "+" that follows the block under the cursor (edit mode only) and
+  // inserts a component right before it — so you can add at any height.
+  function setupHoverInserter(root) {
+    if (hoverPlus) return;
+    qsa(document, '#lect-plus').forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
+    hoverPlus = document.createElement('button');
+    hoverPlus.id = 'lect-plus';
+    hoverPlus.textContent = '+';
+    hoverPlus.title = 'Insertar un componente acá';
+    hoverPlus.style.cssText = 'position:fixed;z-index:65;display:none;width:28px;height:28px;border-radius:50%;border:1px solid var(--r-acc2,#8f9bff);background:rgba(58,60,255,.92);color:#fff;font:400 18px/1 Helvetica,Arial,sans-serif;cursor:pointer;padding:0;box-shadow:0 2px 10px rgba(0,0,0,.45)';
+    hoverPlus.addEventListener('mouseenter', function () { hoverPlus._over = true; });
+    hoverPlus.addEventListener('mouseleave', function () { hoverPlus._over = false; });
+    hoverPlus.addEventListener('click', function (e) {
+      e.preventDefault(); e.stopPropagation();
+      if (!hoverSection) return;
+      var section = hoverSection, ref = hoverRefNode;
+      insertMenu(hoverPlus, function (kind) { insertBlockAt(root, section, kind, ref); });
+    });
+    document.body.appendChild(hoverPlus);
+    root.addEventListener('mousemove', function (e) {
+      if (!editMode) { hoverPlus.style.display = 'none'; return; }
+      if (hoverPlus._over) return;
+      var section = e.target && e.target.closest ? e.target.closest('section[id]') : null;
+      if (!section || !root.contains(section)) { hoverPlus.style.display = 'none'; return; }
+      var blocks = insertableChildren(section), ref = null, refRect = null;
+      for (var i = 0; i < blocks.length; i++) {
+        var rct = blocks[i].getBoundingClientRect();
+        if (e.clientY < rct.bottom) { ref = blocks[i]; refRect = rct; break; }
+      }
+      if (!ref) { hoverPlus.style.display = 'none'; return; }
+      hoverSection = section; hoverRefNode = ref;
+      hoverPlus.style.left = Math.max(6, refRect.left - 34) + 'px';
+      hoverPlus.style.top = (refRect.top - 2) + 'px';
+      hoverPlus.style.display = 'block';
+    });
+    root.addEventListener('mouseleave', function () { if (!hoverPlus._over) hoverPlus.style.display = 'none'; });
+  }
+
   function applyEditMode(root) {
     var on = editMode;
     qsa(root, '[data-edit-text], [data-side], figcaption[contenteditable]').forEach(function (el) { el.contentEditable = on ? 'true' : 'false'; el.style.cursor = on ? 'text' : ''; });
@@ -796,6 +857,7 @@ requestAnimationFrame(draw);
       if (fig._st && fig._st.type === 'carrusel') showSlide(fig);
     });
     if (!on && txtBar) { txtBar.style.display = 'none'; curTxt = null; }
+    if (!on && hoverPlus) hoverPlus.style.display = 'none';
     if (editBtn) {
       editBtn.textContent = on ? '\u25cf Editando (Ctrl+Shift+E)' : 'Editar (Ctrl+Shift+E)';
       editBtn.style.borderColor = on ? 'var(--r-acc,#3a3cff)' : 'rgba(255,255,255,.22)';
@@ -883,7 +945,7 @@ requestAnimationFrame(draw);
       // 2) Clone the whole document and bake the resolved state into it.
       var clone = document.documentElement.cloneNode(true);
       clone.setAttribute('data-fwc-locked', '1'); // published build: render-only, no edit UI
-      qsa(clone, '#lect-edit-toggle, #lect-export, #lect-txtbar, [data-inserter]').forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
+      qsa(clone, '#lect-edit-toggle, #lect-export, #lect-txtbar, #lect-plus, [data-inserter]').forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
       // Drop dead/duplicate floating toolbars (fixed, z-index:70) left over from previous saves.
       qsa(clone, 'body > div').forEach(function (dv) { if (/z-index:\s*70/.test(dv.getAttribute('style') || '')) { if (dv.parentNode) dv.parentNode.removeChild(dv); } });
       qsa(clone, 'figure[data-fig]').forEach(function (fc) {
@@ -931,6 +993,7 @@ requestAnimationFrame(draw);
     if (!LOCKED) {
       // Locked (published) build: render only, no edit UI, no keyboard shortcut, no dropzones.
       setupInserters(root);
+      setupHoverInserter(root);
       setupEditToggle(root);
       setupTextToolbar(root);
     }
