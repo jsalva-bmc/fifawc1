@@ -162,24 +162,133 @@ figcaption[contenteditable]:focus{outline:1.5px dashed var(--r-acc2);outline-off
     </footer>
 
   <section id="sec_mr3pk95vwfjw" data-screen-label="Sección nueva" data-inserter-added="1" style="display: flow-root; padding-top: clamp(50px, 9vh, 110px);"><div style="border-top: 1px solid var(--r-hair); margin-bottom: 30px;"></div><h2 data-edit-text="1" data-txt-key="txt_sec_mr3pk95vwfjw_0" contenteditable="false" style="font-family: var(--r-display); font-weight: 700; font-size: clamp(28px, 3.6vw, 48px); line-height: 1.06; letter-spacing: -0.02em; margin-bottom: 0.7em; text-wrap: balance; color: var(--r-ink);">Nuevo título de sección</h2><p data-edit-text="1" data-txt-key="txt_sec_mr3pk95vwfjw_1" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: var(--r-ink-soft); margin-bottom: 1.35em; text-wrap: pretty;">Escribí acá tu texto…</p><div data-inserter="1" style="display: none; justify-content: center; margin: 34px 0px 6px;"><button style="font: 600 11.5px / 1 Helvetica, Arial, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; color: rgb(174, 184, 255); background: rgba(143, 155, 255, 0.12); border: 1px dashed rgba(143, 155, 255, 0.5); border-radius: 999px; padding: 10px 18px; cursor: pointer;">+ Agregar componente</button></div></section><div data-inserter="1" data-add-section="1" style="display: none; justify-content: center; margin: 50px 0px 10px;"><button style="font: 600 12px / 1 Helvetica, Arial, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; color: rgb(255, 255, 255); background: rgba(58, 60, 255, 0.22); border: 1px dashed var(--r-acc2,#8f9bff); border-radius: 999px; padding: 12px 22px; cursor: pointer;">+ Agregar sección</button></div></main></div>
+<script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
 <script>
 (function(){
-var C={"base":"#05060c","mid":[58,60,255],"hi":[150,165,255],"dark":true,"e":1,"d":1};
-var cv=document.getElementById("lect-bg"),ctx=cv.getContext("2d"),dpr=Math.min(window.devicePixelRatio||1,1.5),W=0,H=0,t=0,last=performance.now(),mx=.5,my=.5,tmx=.5,tmy=.5;
-function size(){var r=cv.getBoundingClientRect();W=r.width;H=r.height;cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);}
-size();window.addEventListener("resize",size);
-window.addEventListener("pointermove",function(ev){tmx=ev.clientX/W;tmy=ev.clientY/H;});
+// Scroll progress bar (independent of which background renders).
 window.addEventListener("scroll",function(){var el=document.documentElement;var p=el.scrollHeight>el.clientHeight?(el.scrollTop||document.body.scrollTop)/(el.scrollHeight-el.clientHeight):0;document.getElementById("lect-prog").style.transform="scaleX("+Math.max(0,Math.min(1,p)).toFixed(4)+")";},{passive:true});
-function draw(){requestAnimationFrame(draw);var now=performance.now(),dt=(now-last)/1000;last=now;if(dt>.05)dt=.0166;t+=dt*C.e;mx+=(tmx-mx)*.05;my+=(tmy-my)*.05;
-ctx.fillStyle=C.base;ctx.fillRect(0,0,W,H);
-var R=Math.max(26,48/Math.max(.6,C.d)),hw=Math.sqrt(3)*R,vs=1.5*R,lineA=C.dark?.1:.12,fillA=C.dark?.2:.1;
-var cxm=W*(.32+mx*.36),cym=H*(.36+my*.32),row=0;
-for(var y=-R;y<H+R;y+=vs,row++){var xo=(row%2)?hw/2:0;
-for(var x=-R;x<W+hw;x+=hw){var hx=x+xo,hy=y,dd=Math.hypot(hx-cxm,hy-cym),lit=Math.max(0,Math.sin(dd*.014-t*1.5*C.e));
-ctx.beginPath();for(var k=0;k<6;k++){var a=Math.PI/180*(60*k-90),px=hx+R*Math.cos(a),py=hy+R*Math.sin(a);if(k===0)ctx.moveTo(px,py);else ctx.lineTo(px,py);}ctx.closePath();
-if(lit>.28){ctx.fillStyle="rgba("+C.mid[0]+","+C.mid[1]+","+C.mid[2]+","+(lit*fillA).toFixed(3)+")";ctx.fill();}
-ctx.strokeStyle="rgba("+C.hi[0]+","+C.hi[1]+","+C.hi[2]+","+lineA+")";ctx.lineWidth=1;ctx.stroke();}}}
-requestAnimationFrame(draw);
+
+var cv=document.getElementById("lect-bg");
+// 3D stadium background (Three.js). Falls back to the hex grid if the CDN is unreachable.
+if (window.THREE) { initStadium(cv); document.documentElement.setAttribute('data-bg','stadium'); }
+else { initHex(cv); document.documentElement.setAttribute('data-bg','hex'); }
+
+function initStadium(el){
+  var THREE = window.THREE;
+  var pal = { base: '#05060c', hi: [150,165,255], hot: [230,58,31] };
+  var renderer = new THREE.WebGLRenderer({ canvas: el, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setClearColor(pal.base, 1);
+  if (THREE.SRGBColorSpace) renderer.outputColorSpace = THREE.SRGBColorSpace;
+  var scene = new THREE.Scene();
+  scene.fog = new THREE.Fog(pal.base, 5.5, 13);
+  var camera = new THREE.PerspectiveCamera(48, 1, 0.1, 100);
+
+  // ---- crowd bowl (points, subtle per-seat bob) ----
+  var N = 2400;
+  var positions = new Float32Array(N * 3), colors = new Float32Array(N * 3), phase = new Float32Array(N), baseY = new Float32Array(N);
+  var midC = new THREE.Color('rgb(' + pal.hi.join(',') + ')'), hotC = new THREE.Color('rgb(' + pal.hot.join(',') + ')'), dimC = midC.clone().multiplyScalar(0.55);
+  for (var i = 0; i < N; i++){
+    var tier = Math.floor(Math.random() * 16), radius = 2.85 + tier * 0.3, height = -1.15 + tier * 0.185 + (Math.random() - 0.5) * 0.08, ang = Math.random() * Math.PI * 2;
+    positions[i * 3] = Math.cos(ang) * radius; positions[i * 3 + 1] = height; positions[i * 3 + 2] = Math.sin(ang) * radius * 0.6;
+    baseY[i] = height; phase[i] = Math.random() * Math.PI * 2;
+    var r = Math.random(); var col = r < 0.06 ? hotC : r < 0.75 ? midC : dimC;
+    colors[i * 3] = col.r; colors[i * 3 + 1] = col.g; colors[i * 3 + 2] = col.b;
+  }
+  var geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  geo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+  var points = new THREE.Points(geo, new THREE.PointsMaterial({ size: 0.07, vertexColors: true, transparent: true, opacity: 0.95, sizeAttenuation: true, fog: true }));
+  scene.add(points);
+
+  // ---- roof rim (silhouette above the bowl) ----
+  var roof = new THREE.Mesh(new THREE.TorusGeometry(5.05, 0.16, 8, 56), new THREE.MeshStandardMaterial({ color: 0x14161e, roughness: 0.8, metalness: 0.2 }));
+  roof.rotation.x = Math.PI / 2; roof.position.y = 1.85; roof.scale.set(1, 0.62, 1); scene.add(roof);
+
+  // ---- pitch: grass texture with mowing stripes + line markings ----
+  var pc = document.createElement('canvas'); pc.width = 512; pc.height = 340;
+  var pctx = pc.getContext('2d');
+  var stripes = 9;
+  for (var s = 0; s < stripes; s++){ pctx.fillStyle = s % 2 ? '#1c5c30' : '#215f34'; pctx.fillRect(0, s * pc.height / stripes, pc.width, pc.height / stripes + 1); }
+  pctx.strokeStyle = 'rgba(255,255,255,0.85)'; pctx.lineWidth = 3;
+  pctx.strokeRect(14, 14, pc.width - 28, pc.height - 28);
+  pctx.beginPath(); pctx.moveTo(pc.width / 2, 14); pctx.lineTo(pc.width / 2, pc.height - 14); pctx.stroke();
+  pctx.beginPath(); pctx.arc(pc.width / 2, pc.height / 2, 46, 0, 6.283); pctx.stroke();
+  pctx.beginPath(); pctx.arc(pc.width / 2, pc.height / 2, 3, 0, 6.283); pctx.fillStyle = '#fff'; pctx.fill();
+  [14, pc.width - 14].forEach(function (x, side) {
+    pctx.strokeRect(side === 0 ? 14 : pc.width - 14 - 96, pc.height / 2 - 78, 96, 156);
+    pctx.strokeRect(side === 0 ? 14 : pc.width - 14 - 40, pc.height / 2 - 44, 40, 88);
+  });
+  var pitchTex = new THREE.CanvasTexture(pc);
+  if (THREE.SRGBColorSpace) pitchTex.colorSpace = THREE.SRGBColorSpace;
+  var pitch = new THREE.Mesh(new THREE.PlaneGeometry(4.6, 3.05), new THREE.MeshStandardMaterial({ map: pitchTex, roughness: 0.95 }));
+  pitch.rotation.x = -Math.PI / 2; pitch.position.y = -1.2; scene.add(pitch);
+  var pitchGlow = new THREE.Mesh(new THREE.CircleGeometry(3.0, 48), new THREE.MeshBasicMaterial({ color: 0x0c2f1a, transparent: true, opacity: 0.28 }));
+  pitchGlow.rotation.x = -Math.PI / 2; pitchGlow.position.y = -1.21; scene.add(pitchGlow);
+
+  // ---- lighting: ambient + 4 floodlight towers ----
+  scene.add(new THREE.AmbientLight(0x8892ff, 0.55));
+  var floodPos = [[3.9, 3.3, 2.6], [-3.9, 3.3, 2.6], [3.9, 3.3, -2.6], [-3.9, 3.3, -2.6]];
+  var glowTexCanvas = document.createElement('canvas'); glowTexCanvas.width = glowTexCanvas.height = 64;
+  var gctx = glowTexCanvas.getContext('2d');
+  var rg = gctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+  rg.addColorStop(0, 'rgba(255,250,230,1)'); rg.addColorStop(1, 'rgba(255,250,230,0)');
+  gctx.fillStyle = rg; gctx.fillRect(0, 0, 64, 64);
+  var glowTex = new THREE.CanvasTexture(glowTexCanvas);
+  floodPos.forEach(function (p) {
+    var pole = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.04, p[1] + 1.2, 6), new THREE.MeshStandardMaterial({ color: 0x1a1c24 }));
+    pole.position.set(p[0], (p[1] - 1.2) / 2, p[2]); scene.add(pole);
+    var lamp = new THREE.PointLight(0xfff6e0, 1.35, 9, 2);
+    lamp.position.set(p[0], p[1], p[2]); scene.add(lamp);
+    var spr = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, color: 0xfff6e0, transparent: true, depthWrite: false }));
+    spr.scale.set(0.55, 0.55, 1); spr.position.copy(lamp.position); scene.add(spr);
+  });
+
+  var ball = new THREE.Mesh(new THREE.SphereGeometry(0.2, 20, 20), new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.4 }));
+  scene.add(ball);
+
+  function resize(){
+    var w = window.innerWidth, h = window.innerHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h; camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  var t = 0;
+  var posAttr = geo.attributes.position;
+  var ENERGY = 1; // subí/bajá esta constante (0.6–2) para acelerar o frenar toda la escena
+  function animate(){
+    requestAnimationFrame(animate);
+    t += 0.008 * ENERGY;
+    for (var i = 0; i < N; i++) posAttr.array[i * 3 + 1] = baseY[i] + Math.sin(t * 3 + phase[i]) * 0.012;
+    posAttr.needsUpdate = true;
+    camera.position.set(Math.sin(t * 0.32) * 6.6, 1.9 + Math.sin(t * 0.5) * 0.3, Math.cos(t * 0.32) * 6.6);
+    camera.lookAt(0, 0.2, 0);
+    ball.position.set(Math.sin(t * 1.5) * 1.1, -1.1 + Math.abs(Math.sin(t * 2.7)) * 0.4, Math.cos(t * 1.5) * 0.8);
+    renderer.render(scene, camera);
+  }
+  animate();
+}
+
+// Fallback: original hex-grid background (used only if Three.js failed to load).
+function initHex(cv){
+  var C={"base":"#05060c","mid":[58,60,255],"hi":[150,165,255],"dark":true,"e":1,"d":1};
+  var ctx=cv.getContext("2d"),dpr=Math.min(window.devicePixelRatio||1,1.5),W=0,H=0,t=0,last=performance.now(),mx=.5,my=.5,tmx=.5,tmy=.5;
+  function size(){var r=cv.getBoundingClientRect();W=r.width;H=r.height;cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);}
+  size();window.addEventListener("resize",size);
+  window.addEventListener("pointermove",function(ev){tmx=ev.clientX/W;tmy=ev.clientY/H;});
+  function draw(){requestAnimationFrame(draw);var now=performance.now(),dt=(now-last)/1000;last=now;if(dt>.05)dt=.0166;t+=dt*C.e;mx+=(tmx-mx)*.05;my+=(tmy-my)*.05;
+  ctx.fillStyle=C.base;ctx.fillRect(0,0,W,H);
+  var R=Math.max(26,48/Math.max(.6,C.d)),hw=Math.sqrt(3)*R,vs=1.5*R,lineA=C.dark?.1:.12,fillA=C.dark?.2:.1;
+  var cxm=W*(.32+mx*.36),cym=H*(.36+my*.32),row=0;
+  for(var y=-R;y<H+R;y+=vs,row++){var xo=(row%2)?hw/2:0;
+  for(var x=-R;x<W+hw;x+=hw){var hx=x+xo,hy=y,dd=Math.hypot(hx-cxm,hy-cym),lit=Math.max(0,Math.sin(dd*.014-t*1.5*C.e));
+  ctx.beginPath();for(var k=0;k<6;k++){var a=Math.PI/180*(60*k-90),px=hx+R*Math.cos(a),py=hy+R*Math.sin(a);if(k===0)ctx.moveTo(px,py);else ctx.lineTo(px,py);}ctx.closePath();
+  if(lit>.28){ctx.fillStyle="rgba("+C.mid[0]+","+C.mid[1]+","+C.mid[2]+","+(lit*fillA).toFixed(3)+")";ctx.fill();}
+  ctx.strokeStyle="rgba("+C.hi[0]+","+C.hi[1]+","+C.hi[2]+","+lineA+")";ctx.lineWidth=1;ctx.stroke();}}}
+  requestAnimationFrame(draw);
+}
 })();
 </script>
 <script>
