@@ -721,8 +721,17 @@ function initHex(cv){
         handle.addEventListener('pointermove', mv); handle.addEventListener('pointerup', up);
       });
 
-      fig.addEventListener('pointerenter', function () { if (!editMode) return; bar.style.opacity = '1'; bar.style.pointerEvents = 'auto'; handle.style.opacity = '1'; });
-      fig.addEventListener('pointerleave', function () { bar.style.opacity = '0'; bar.style.pointerEvents = 'none'; handle.style.opacity = '0'; });
+      // The toolbar floats 38px ABOVE the figure, so moving the pointer from the
+      // figure up to it crosses an empty strip and fires pointerleave. Hide with a
+      // cancelable delay (like the floating "+") so the options stay reachable.
+      var barTimer = null;
+      function showBar() { if (!editMode) return; clearTimeout(barTimer); bar.style.opacity = '1'; bar.style.pointerEvents = 'auto'; handle.style.opacity = '1'; }
+      function hideBarSoon() { clearTimeout(barTimer); barTimer = setTimeout(function () { bar.style.opacity = '0'; bar.style.pointerEvents = 'none'; handle.style.opacity = '0'; }, 700); }
+      fig.addEventListener('pointerenter', showBar);
+      fig.addEventListener('pointerleave', hideBarSoon);
+      bar.addEventListener('pointerenter', showBar);
+      bar.addEventListener('pointerleave', hideBarSoon);
+      handle.addEventListener('pointerenter', showBar);
 
       qsa(fig, '[data-side]').forEach(function (side) {
         var key = 'fwcL_side_' + id + '_' + side.getAttribute('data-side');
