@@ -414,13 +414,49 @@ function initHex(cv){
   function applyLayout(fig) {
     var st = fig._st, media = qs(fig, '[data-media]'), sides = qsa(fig, '[data-side]'), w = st.width;
     fig.style.display = 'block'; fig.style.width = ''; fig.style.marginLeft = ''; fig.style.marginRight = '';
-    fig.style.cssFloat = 'none'; fig.style.gridTemplateColumns = ''; fig.style.gap = '';
+    fig.style.cssFloat = 'none'; fig.style.gridTemplateColumns = ''; fig.style.gap = ''; fig.style.clear = '';
     media.style.width = ''; media.style.margin = '';
     sides.forEach(function (s) { s.style.display = 'none'; });
-    if (st.layout === 'completo') { fig.style.width = '100vw'; fig.style.marginLeft = 'calc(50% - 50vw)'; fig.style.marginTop = '2.4em'; fig.style.marginBottom = '2.4em'; media.style.width = '100%'; }
-    else if (st.layout === 'centrado') { fig.style.marginTop = '2em'; fig.style.marginBottom = '2em'; media.style.width = w + '%'; media.style.margin = '0 auto'; }
+    if (st.layout === 'completo') { fig.style.width = '100vw'; fig.style.marginLeft = 'calc(50% - 50vw)'; fig.style.marginTop = '2.4em'; fig.style.marginBottom = '2.4em'; media.style.width = '100%'; fig.style.clear = 'both'; }
+    else if (st.layout === 'centrado') { fig.style.marginTop = '2em'; fig.style.marginBottom = '2em'; media.style.width = w + '%'; media.style.margin = '0 auto'; fig.style.clear = 'both'; }
     else if (st.layout === 'izquierda' || st.layout === 'derecha') { fig.style.cssFloat = st.layout === 'izquierda' ? 'left' : 'right'; fig.style.width = Math.min(w, 60) + '%'; fig.style.marginTop = '.4em'; fig.style.marginBottom = '1.2em'; if (st.layout === 'izquierda') fig.style.marginRight = '32px'; else fig.style.marginLeft = '32px'; media.style.width = '100%'; }
-    else if (st.layout === 'costados') { fig.style.display = 'grid'; fig.style.gridTemplateColumns = '1fr ' + Math.max(30, Math.min(w, 72)) + '% 1fr'; fig.style.gap = '26px'; fig.style.marginTop = '2em'; fig.style.marginBottom = '2em'; media.style.width = '100%'; sides.forEach(function (s) { s.style.display = 'block'; }); }
+    else if (st.layout === 'costados') { fig.style.display = 'grid'; fig.style.gridTemplateColumns = '1fr ' + Math.max(30, Math.min(w, 72)) + '% 1fr'; fig.style.gap = '26px'; fig.style.marginTop = '2em'; fig.style.marginBottom = '2em'; media.style.width = '100%'; sides.forEach(function (s) { s.style.display = 'block'; }); fig.style.clear = 'both'; }
+    scheduleFloatFix();
+  }
+
+  // ---- Anti-overlap for floated figures ----
+  // Two floats on the same side at the same height crush the text between them
+  // (and can visually pile up). When that happens, push the later one below.
+  function fixFloatOverlap() {
+    qsa(document, 'section[id]').forEach(function (sec) {
+      var prev = [];
+      qsa(sec, ':scope > figure[data-fig]').forEach(function (f) {
+        var st = f._st;
+        if (!st || st.hidden || f.style.display === 'none') return;
+        if (st.layout !== 'izquierda' && st.layout !== 'derecha') return;
+        f.style.clear = '';
+        var side = st.layout === 'izquierda' ? 'left' : 'right';
+        var r = f.getBoundingClientRect();
+        for (var i = 0; i < prev.length; i++) {
+          var p = prev[i], pr = p.el.getBoundingClientRect();
+          var vOverlap = r.top < pr.bottom - 6 && r.bottom > pr.top + 6;
+          if (!vOverlap) continue;
+          var wSum = Math.min(st.width, 60) + Math.min(p.st.width, 60);
+          // Same side never coexists at the same height; opposite sides only if
+          // they leave the text at least ~half the column width.
+          if (p.side === side || wSum > 45) {
+            f.style.clear = (p.side === side) ? side : 'both';
+            r = f.getBoundingClientRect();
+          }
+        }
+        prev.push({ el: f, side: side, st: st });
+      });
+    });
+  }
+  var floatFixTimer = null;
+  function scheduleFloatFix() {
+    clearTimeout(floatFixTimer);
+    floatFixTimer = setTimeout(fixFloatOverlap, 120);
   }
 
   function buildImageSlot(host, key, meta, onChange, anyFile) {
@@ -1123,6 +1159,12 @@ function initHex(cv){
     }
     applyEditMode(root);
     watchAV(root);
+    // Re-run the float anti-overlap pass whenever heights can change:
+    // window resizes and media (video/img) finishing to load.
+    scheduleFloatFix();
+    window.addEventListener('resize', scheduleFloatFix);
+    document.addEventListener('loadedmetadata', function (e) { if (e.target && e.target.tagName === 'VIDEO') scheduleFloatFix(); }, true);
+    document.addEventListener('load', function (e) { if (e.target && e.target.tagName === 'IMG') scheduleFloatFix(); }, true);
   };
   Editor.isEditMode = function () { return editMode; };
   Editor.resolveMediaAsset = resolveMediaAsset;
