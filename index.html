@@ -782,7 +782,14 @@ function initHex(cv){
         });
       });
       var capEl = qs(fig, 'figcaption');
-      if (capEl) { capEl.setAttribute('data-txt-key', 'cap_' + id); applySavedSty(capEl); }
+      if (capEl) {
+        capEl.setAttribute('data-txt-key', 'cap_' + id); applySavedSty(capEl);
+        // In the published (locked) build, an untouched caption still shows the editor
+        // prompt "Epígrafe — hacé clic para editar" floating in empty space. Hide it.
+        if (LOCKED && /^Ep[ií]grafe\s*—\s*hac[eé] clic para editar$/i.test((capEl.textContent || '').trim())) {
+          capEl.style.display = 'none';
+        }
+      }
 
       applyLayout(fig);
       applyMedia(fig);
