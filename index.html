@@ -302,6 +302,7 @@ function initHex(cv){
   var LOCAL_URLS = {};
   var editMode = false;
   var LOCKED = false;
+  var EXPORTED = false; // true for any exported/published file: ignore localStorage, trust baked HTML
   var editBtn = null;
   var txtBar = null;
   var curTxt = null;
@@ -630,6 +631,7 @@ function initHex(cv){
     try { localStorage.setItem('fwcL_sty_' + k, JSON.stringify({ size: el.style.fontSize || '', color: el.style.color || '', hidden: el.style.display === 'none' })); } catch (e) {}
   }
   function applySavedSty(el) {
+    if (EXPORTED) return; // baked HTML already carries the final inline styles
     var k = txtKey(el); if (!k) return;
     try {
       var s = JSON.parse(localStorage.getItem('fwcL_sty_' + k) || 'null');
@@ -696,7 +698,7 @@ function initHex(cv){
       var initRaw = fig.getAttribute('data-fig-init');
       var init = null; try { init = initRaw ? JSON.parse(initRaw) : null; } catch (e) {}
       var st = Object.assign({ layout: 'centrado', width: 78, type: 'imagen', image: null, video: null, slides: 2, cur: 0, imgs: [], hidden: false }, init || {});
-      try { var s = JSON.parse(localStorage.getItem('fwcL_fig_' + id) || 'null'); if (s && s.layout) st = Object.assign(st, s); } catch (e) {}
+      if (!EXPORTED) { try { var s = JSON.parse(localStorage.getItem('fwcL_fig_' + id) || 'null'); if (s && s.layout) st = Object.assign(st, s); } catch (e) {} }
       fig._st = st;
       fig.removeAttribute('data-fig-init');
       if (st.hidden) fig.style.display = 'none';
@@ -772,7 +774,7 @@ function initHex(cv){
         var key = 'fwcL_side_' + id + '_' + side.getAttribute('data-side');
         side.setAttribute('data-txt-key', 'side_' + id + '_' + side.getAttribute('data-side'));
         applySavedSty(side);
-        try { var v = localStorage.getItem(key); if (v) side.textContent = v; } catch (e) {}
+        if (!EXPORTED) { try { var v = localStorage.getItem(key); if (v) side.textContent = v; } catch (e) {} }
         if (!side.textContent.trim()) { side.textContent = side.getAttribute('data-ph'); side._ph = true; side.style.opacity = '.4'; }
         side.addEventListener('focus', function () { if (side._ph) { side.textContent = ''; side._ph = false; side.style.opacity = '1'; } });
         side.addEventListener('blur', function () {
@@ -804,7 +806,7 @@ function initHex(cv){
       els.forEach(function (el, i) {
         if (el.getAttribute('data-edit-text')) return;
         var key = 'fwcL_txt_' + scopeId + '_' + i;
-        try { var v = localStorage.getItem(key); if (v !== null) el.innerHTML = v; } catch (e) {}
+        if (!EXPORTED) { try { var v = localStorage.getItem(key); if (v !== null) el.innerHTML = v; } catch (e) {} }
         el.setAttribute('data-edit-text', '1');
         el.setAttribute('data-txt-key', 'txt_' + scopeId + '_' + i);
         applySavedSty(el);
@@ -1152,9 +1154,17 @@ function initHex(cv){
     root._fwcEditorInit = true;
     // A published (locked) build can be re-opened for editing by adding #editar to the URL.
     var forceEdit = location.hash === '#editar' || /[?&]editar(=|&|$)/i.test(location.search);
-    LOCKED = document.documentElement.hasAttribute('data-fwc-locked') && !forceEdit;
-    replaySections(root);
-    replayBlocks(root);
+    var isExported = document.documentElement.hasAttribute('data-fwc-locked');
+    EXPORTED = isExported;
+    LOCKED = isExported && !forceEdit;
+    // localStorage replay only makes sense in the original design tool, where blocks
+    // are added to a fresh template. In an exported file everything is already baked
+    // into the HTML, and replaying would DUPLICATE blocks/videos — worse on file://,
+    // where every local copy shares one localStorage. So skip it for exported builds.
+    if (!isExported) {
+      replaySections(root);
+      replayBlocks(root);
+    }
     setupFigures(root);
     setupEditableText(root);
     if (!LOCKED) {
