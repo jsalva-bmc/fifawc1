@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="es" data-bg="stadium" data-fwc-locked="1"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FWC 2026: el fútbol como negocio cultural — BMC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="stylesheet" href="./index_files/css2">
+<style>
+:root{--r-bg:#05060c;--r-ink:#f2f4f8;--r-ink-soft:rgba(242,244,248,.74);--r-ink-faint:rgba(242,244,248,.45);--r-acc:#3a3cff;--r-acc2:#8f9bff;--r-hair:rgba(255,255,255,.14);--r-display:'Bricolage Grotesque',sans-serif;--r-body:'Helvetica Neue',Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--r-bg);overflow-x:hidden}
+[data-side]:focus{outline:1.5px dashed var(--r-acc2);outline-offset:6px}
+figcaption[contenteditable]:focus{outline:1.5px dashed var(--r-acc2);outline-offset:4px}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script></head>
+<body>
+<canvas id="lect-bg" style="position:fixed;inset:0;width:100%;height:100%;display:block;z-index:0" width="1366" height="633"></canvas>
+<div id="lect-veil" style="position:fixed;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(3,4,10,.2) 0%,rgba(3,4,10,.72) 24%,rgba(3,4,10,.72) 76%,rgba(3,4,10,.2) 100%),radial-gradient(130% 120% at 50% 30%,rgba(3,4,10,.28) 30%,rgba(3,4,10,.85) 100%)"></div>
+<div style="position:fixed;top:0;left:0;right:0;height:2px;z-index:50"><i id="lect-prog" style="display: block; height: 100%; width: 100%; transform-origin: left center; transform: scaleX(0.0015); background: var(--r-acc);"></i></div>
+<div style="position:fixed;left:24px;bottom:20px;z-index:40;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.07em;color:var(--r-ink-faint);line-height:1.6;pointer-events:none">NOTICIAS FWC 2026<br>Julio 2026 · Proprietary &amp; Confidential</div>
+<img id="lect-mark" src="data:image/png;base64,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" alt="BMC" style="position:fixed;right:24px;bottom:18px;height:20px;opacity:.85;z-index:40;pointer-events:none">
+<div data-dc-tpl="15" id="lect-root" data-om-id="8714c018:17" style="position: relative; z-index: 2; font-family: var(--r-body); color: var(--r-ink);">
+
+  <header data-dc-tpl="16" data-screen-label="Portada" data-om-id="8714c018:18" style="min-height: 92vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: clamp(40px, 7vw, 120px) clamp(24px, 6vw, 80px) clamp(30px, 5vh, 60px);">
+    <div data-dc-tpl="17" data-om-id="8714c018:19" style="font: 600 clamp(11px,1vw,14px)/1 var(--r-body); letter-spacing: 0.3em; text-transform: uppercase; color: var(--r-acc2); margin-bottom: clamp(20px, 3vh, 34px);">FWC 2026 · Business Meets Culture</div>
+    <h1 data-dc-tpl="18" data-om-id="8714c018:20" data-edit-text="1" data-txt-key="txt_header_0" contenteditable="false" style="font-family: var(--r-display); font-weight: 800; font-size: clamp(40px, 6.6vw, 96px); line-height: 1; letter-spacing: -0.028em; max-width: 16ch; text-wrap: balance; color: rgb(255, 255, 255); cursor: text;">FWC 2026: el fútbol como negocio cultural</h1>
+    <p data-dc-tpl="19" data-om-id="8714c018:21" data-edit-text="1" data-txt-key="txt_header_1" contenteditable="false" style="font: 300 clamp(16px,1.7vw,22px)/1.65 var(--r-body); color: rgb(255, 255, 255); max-width: 62ch; margin-top: clamp(24px, 4vh, 42px); text-wrap: pretty; cursor: text;">El Mundial 2026 expande el fútbol como nunca, pero también muestra sus nuevas contradicciones: más global, pero no necesariamente más accesible; más inclusivo en escala, pero más exclusivo en experiencia; más protegido para los sponsors, pero más vulnerable a la creatividad de quienes quedan afuera; más tecnológico, monetizable y televisivo, pero todavía sostenido por el ritual humano de juntarse a mirar un partido.</p>
+    <nav data-dc-tpl="20" data-om-id="8714c018:22" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: clamp(28px, 5vh, 52px); max-width: 760px;">
+      <a data-dc-tpl="21" href="file:///C:/Users/jsalva/Downloads/fwc-2026-sitio/index.html#s1" data-om-id="8714c018:23" style="font: 500 11.5px/1 var(--r-body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--r-ink-soft); text-decoration: none; border: 1px solid var(--r-hair); border-radius: 999px; padding: 9px 16px;">01 · Captive fan</a>
+      <a data-dc-tpl="22" href="file:///C:/Users/jsalva/Downloads/fwc-2026-sitio/index.html#s2" data-om-id="8714c018:24" style="font: 500 11.5px/1 var(--r-body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--r-ink-soft); text-decoration: none; border: 1px solid var(--r-hair); border-radius: 999px; padding: 9px 16px;">02 · Superbowlization</a>
+      <a data-dc-tpl="23" href="file:///C:/Users/jsalva/Downloads/fwc-2026-sitio/index.html#s3" data-om-id="8714c018:25" style="font: 500 11.5px/1 var(--r-body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--r-ink-soft); text-decoration: none; border: 1px solid var(--r-hair); border-radius: 999px; padding: 9px 16px;">03 · Inclusion &amp; exclusion</a>
+      <a data-dc-tpl="24" href="file:///C:/Users/jsalva/Downloads/fwc-2026-sitio/index.html#s4" data-om-id="8714c018:26" style="font: 500 11.5px/1 var(--r-body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--r-ink-soft); text-decoration: none; border: 1px solid var(--r-hair); border-radius: 999px; padding: 9px 16px;">04 · Brand exclusivity</a>
+      <a data-dc-tpl="25" href="file:///C:/Users/jsalva/Downloads/fwc-2026-sitio/index.html#s5" data-om-id="8714c018:27" style="font: 500 11.5px/1 var(--r-body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--r-ink-soft); text-decoration: none; border: 1px solid var(--r-hair); border-radius: 999px; padding: 9px 16px;">05 · Borrowed legitimacy</a>
+      <a data-dc-tpl="26" href="file:///C:/Users/jsalva/Downloads/fwc-2026-sitio/index.html#s6" data-om-id="8714c018:28" style="font: 500 11.5px/1 var(--r-body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--r-ink-soft); text-decoration: none; border: 1px solid var(--r-hair); border-radius: 999px; padding: 9px 16px;">06 · Shared ritual</a>
+    </nav>
+    <div data-dc-tpl="27" data-om-id="8714c018:29" style="margin-top: clamp(30px, 6vh, 64px); font: 500 10.5px/1 var(--r-body); letter-spacing: 0.24em; text-transform: uppercase; color: var(--r-ink-faint);">Scrolleá para leer ↓</div>
+  </header>
+
+  <main data-dc-tpl="28" data-om-id="8714c018:30" data-add-section-added="1" style="max-width: 1100px; margin: 0px auto; padding: 0px clamp(22px, 5vw, 40px) 40px;">
+
+    <section data-dc-tpl="29" id="s1" data-screen-label="01 Captive fan" data-om-id="8714c018:31" data-inserter-added="1" style="display: flow-root; padding-top: clamp(50px, 9vh, 110px);">
+      <div data-dc-tpl="30" data-om-id="8714c018:32" style="border-top: 1px solid var(--r-hair); margin-bottom: 30px;"></div>
+      <h2 data-dc-tpl="31" data-om-id="8714c018:33" data-edit-text="1" data-txt-key="txt_s1_0" contenteditable="false" style="font-family: var(--r-display); font-weight: 700; font-size: clamp(28px, 3.6vw, 48px); line-height: 1.06; letter-spacing: -0.02em; margin-bottom: 0.7em; text-wrap: balance; color: rgb(255, 255, 255); cursor: text;">1. El fan como consumidor cautivo</h2>
+      <figure data-fig="blk_mr9e9vx6g66u" style="margin-top: 0.4em; margin-bottom: 1.2em; display: block; float: right; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 24%; margin-left: 32px;" data-fig-init="{&quot;layout&quot;:&quot;derecha&quot;,&quot;width&quot;:24,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:&quot;assets/vid_blk_mr9e9vx6g66u.mp4&quot;,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:false}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr9e9vx6g66u_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr9e9vx6g66u_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr9e9vx6g66u" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: var(--r-ink-faint); margin-top: 12px; cursor: text;"><span style="color: rgb(255, 255, 255); font-size: 14px;">El fenómeno no ha pasado desapercibido</span><div style="color: rgb(255, 255, 255); font-size: 14px;"><span id="docs-internal-guid-6535e500-7fff-6307-7d11-3aacb42f82f6"><a href="https://www.youtube.com/watch?v=m0szV9gLmt8" style="text-decoration: none;"><span style="font-size: 10pt; font-family: Arial, sans-serif; color: rgb(17, 85, 204); background-color: transparent; font-variant: normal; text-decoration: underline; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">Fuente</span></a></span></div></figcaption></figure><p data-dc-tpl="32" data-om-id="8714c018:34" data-edit-text="1" data-txt-key="txt_s1_1" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">El Mundial siempre fue un espectáculo de masas. Pero en 2026, esa masividad se está organizando con una precisión cada vez más comercial: el fan ya no es solo hincha, también es audiencia, comprador, usuario, dato y oportunidad de monetización.</p>
+      <figure data-fig="blk_mr3yf0ro6f65" style="margin-top: 0.4em; margin-bottom: 1.2em; display: none; float: right; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 29%; margin-left: 32px;" data-fig-init="{&quot;layout&quot;:&quot;derecha&quot;,&quot;width&quot;:29,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:null,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr3yf0ro6f65_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr3yf0ro6f65_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr3yf0ro6f65" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: var(--r-ink-faint); margin-top: 12px; display: none; cursor: text;">Epígrafe — hacé clic para editar</figcaption></figure><figure data-fig="blk_mr9883iryfgg" style="margin-top: 0.4em; margin-bottom: 1.2em; display: none; float: right; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 28%; margin-left: 32px;" data-fig-init="{&quot;layout&quot;:&quot;derecha&quot;,&quot;width&quot;:28,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:&quot;assets/vid_blk_mr9883iryfgg.mp4&quot;,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr9883iryfgg_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr9883iryfgg_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr9883iryfgg" style="grid-column: 1 / -1; text-align: center; font-size: 14px; color: rgb(255, 255, 255); margin-top: 12px; cursor: text;">El fenómeno no ha pasado desapercibido<div><span id="docs-internal-guid-6535e500-7fff-6307-7d11-3aacb42f82f6"><a href="https://www.youtube.com/watch?v=m0szV9gLmt8" style="text-decoration:none;"><span style="font-size: 10pt; font-family: Arial, sans-serif; color: rgb(17, 85, 204); background-color: transparent; font-variant: normal; text-decoration: underline; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">Fuente</span></a></span></div></figcaption></figure><p data-dc-tpl="33" data-om-id="8714c018:35" data-edit-text="1" data-txt-key="txt_s1_2" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">El caso más visible son los hydration / cooling breaks. La pausa nació como una excepción médica ante condiciones extremas de calor, pero en este Mundial se volvió obligatoria en los 104 partidos, incluso en sedes o contextos donde la temperatura no necesariamente lo justificaría. FIFA lo presenta como una medida de bienestar para los jugadores; la crítica, sin embargo, apunta a que también funciona como una nueva unidad publicitaria. Las pausas duran tres minutos y aparecen una vez en cada tiempo, partiendo el partido en cuatro bloques de juego más parecidos a una lógica de deporte televisivo estadounidense que al flujo tradicional del fútbol.</p>
+
+      <figure data-dc-tpl="34" data-fig="f1" data-om-id="8714c018:36" style="margin-top: 0.4em; margin-bottom: 1.2em; display: none; float: left; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 45%; margin-right: 32px;" data-fig-init="{&quot;layout&quot;:&quot;izquierda&quot;,&quot;width&quot;:45,&quot;type&quot;:&quot;carrusel&quot;,&quot;image&quot;:null,&quot;video&quot;:{&quot;local&quot;:true,&quot;name&quot;:&quot;Hydration Break YT (online-video-cutter.com) (3).mp4&quot;,&quot;mime&quot;:&quot;video/mp4&quot;},&quot;slides&quot;:1,&quot;cur&quot;:0,&quot;imgs&quot;:[&quot;assets/img_f1_0.mp4&quot;],&quot;hidden&quot;:true}">
+        <div data-dc-tpl="35" data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-om-id="8714c018:37" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;" data-txt-key="side_f1_l">Escribí acá el texto del costado izquierdo…</div>
+        <div data-dc-tpl="36" data-media="" data-om-id="8714c018:38" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div>
+        <div data-dc-tpl="37" data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-om-id="8714c018:39" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;" data-txt-key="side_f1_r">Escribí acá el texto del costado derecho…</div>
+        <figcaption data-dc-tpl="38" contenteditable="false" data-om-id="8714c018:40" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: var(--r-ink-faint); margin-top: 12px; display: none; cursor: text;" data-txt-key="cap_f1">Epígrafe — hacé clic para editar</figcaption>
+      </figure>
+
+      <figure data-fig="blk_mr3yfcd5lplx" style="margin-top: 0.4em; margin-bottom: 1.2em; display: none; float: left; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 30%; margin-right: 32px;" data-fig-init="{&quot;layout&quot;:&quot;izquierda&quot;,&quot;width&quot;:30,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:null,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr3yfcd5lplx_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr3yfcd5lplx_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr3yfcd5lplx" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: var(--r-ink-faint); margin-top: 12px; cursor: text;">Epígrafe — hacé clic para editar</figcaption></figure><figure data-fig="blk_mr984iem7wf5" style="margin-top: 0.4em; margin-bottom: 1.2em; display: none; float: left; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 29%; margin-right: 32px;" data-fig-init="{&quot;layout&quot;:&quot;izquierda&quot;,&quot;width&quot;:29,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:null,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr984iem7wf5_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr984iem7wf5_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr984iem7wf5" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: var(--r-ink-faint); margin-top: 12px; cursor: text;">Epígrafe — hacé clic para editar</figcaption></figure><figure data-fig="blk_mr98ij9vasje" style="margin-top: 0.4em; margin-bottom: 1.2em; display: none; float: left; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 30%; margin-right: 32px;" data-fig-init="{&quot;layout&quot;:&quot;izquierda&quot;,&quot;width&quot;:30,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:null,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr98ij9vasje_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr98ij9vasje_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr98ij9vasje" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: rgb(255, 255, 255); margin-top: 12px; cursor: text;">Espectadores abuchean el Cooling Break<div><span id="docs-internal-guid-1c4c6129-7fff-c4a0-0b6a-9cfafe988052"><a href="https://x.com/i/status/2067405977024872653" style="text-decoration:none;"><span style="font-size: 10pt; font-family: Arial, sans-serif; color: rgb(17, 85, 204); background-color: transparent; font-variant: normal; text-decoration: underline; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">Fuente</span></a></span></div></figcaption></figure><figure data-fig="blk_mr9e8fl69vgc" style="margin-top: 0.4em; margin-bottom: 1.2em; display: block; float: left; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 24%; margin-right: 32px; clear: both;" data-fig-init="{&quot;layout&quot;:&quot;izquierda&quot;,&quot;width&quot;:24,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:&quot;assets/vid_blk_mr9e8fl69vgc.mp4&quot;,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:false}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr9e8fl69vgc_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr9e8fl69vgc_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr9e8fl69vgc" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: var(--r-ink-faint); margin-top: 12px; cursor: text;"><span style="color: rgb(255, 255, 255);">Espectadores abuchean el Cooling Break</span><div style="color: rgb(255, 255, 255);"><span id="docs-internal-guid-1c4c6129-7fff-c4a0-0b6a-9cfafe988052"><a href="https://x.com/i/status/2067405977024872653" style="text-decoration: none;"><span style="font-size: 10pt; font-family: Arial, sans-serif; color: rgb(17, 85, 204); background-color: transparent; font-variant: normal; text-decoration: underline; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">Fuente</span></a></span></div></figcaption></figure><p data-dc-tpl="39" data-om-id="8714c018:41" data-edit-text="1" data-txt-key="txt_s1_3" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">El cambio no pasó desapercibido. En los estadios hubo abucheos, en redes se multiplicaron las críticas y entrenadores, jugadores y ex jugadores cuestionaron la interrupción del ritmo. Para algunos, mata el flow del partido. Para otros, introduce una lógica ajena al fútbol: detener, cortar, vender, volver. No es casual que una de las lecturas más repetidas haya sido que el Mundial empezó a parecerse a un evento organizado en “cuartos”, como el básquet o el fútbol americano, donde cada pausa puede convertirse en inventario comercial.</p><div><span style="font-size: 19.124px;">Las cifras explican parte del ruido. Estimaciones de la industria proyectan que los hydration breaks podrían generar alrededor de USD 250 millones en ingresos publicitarios para Fox Sports en Estados Unidos, y que el impacto global de esas ventanas podría superar USD 1.000 millones si se combinan todos los mercados donde los broadcasters aprovechan esos cortes.</span></div><p data-edit-text="1" data-txt-key="txt_s1_4" contenteditable="false" style="cursor: text;"></p>
+      <p data-blk="blk_mr3xc6rvnwxn" data-edit-text="1" data-txt-key="txt_s1_4" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: var(--r-ink-soft); margin-bottom: 1.35em; text-wrap: pretty; display: none; cursor: text;">Escribí acá tu texto…</p><figure data-fig="blk_mr3xcc0q3ctu" style="margin-top: 0.4em; margin-bottom: 1.2em; display: none; float: right; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 31%; margin-left: 32px;" data-fig-init="{&quot;layout&quot;:&quot;derecha&quot;,&quot;width&quot;:31,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:null,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr3xcc0q3ctu_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr3xcc0q3ctu_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr3xcc0q3ctu" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: var(--r-ink-faint); margin-top: 12px; display: none; cursor: text;">Epígrafe — hacé clic para editar</figcaption></figure><figure data-fig="blk_mr3xxv2vqg1l" style="margin-top: 0.4em; margin-bottom: 1.2em; display: none; float: right; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 31%; margin-left: 32px;" data-fig-init="{&quot;layout&quot;:&quot;derecha&quot;,&quot;width&quot;:31,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:null,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr3xxv2vqg1l_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr3xxv2vqg1l_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr3xxv2vqg1l" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: var(--r-ink-faint); margin-top: 12px; cursor: text;">Epígrafe — hacé clic para editar</figcaption></figure><p data-dc-tpl="40" data-om-id="8714c018:42" data-edit-text="1" data-txt-key="txt_s1_4" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;"><br></p>
+      <figure data-fig="blk_mr3xw7m4odct" style="margin-top: 2em; margin-bottom: 2em; display: none; float: none; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; clear: both;" data-fig-init="{&quot;layout&quot;:&quot;centrado&quot;,&quot;width&quot;:78,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:null,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr3xw7m4odct_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 78%; margin: 0px auto;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr3xw7m4odct_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr3xw7m4odct" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: var(--r-ink-faint); margin-top: 12px; cursor: text;">Epígrafe — hacé clic para editar</figcaption></figure><figure data-fig="blk_mr4wq5qftydl" style="margin-top: 2em; margin-bottom: 2em; display: none; float: none; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; clear: both;" data-fig-init="{&quot;layout&quot;:&quot;centrado&quot;,&quot;width&quot;:78,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:null,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr4wq5qftydl_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 78%; margin: 0px auto;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr4wq5qftydl_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr4wq5qftydl" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: var(--r-ink-faint); margin-top: 12px; cursor: text;">Epígrafe — hacé clic para editar</figcaption></figure><p data-dc-tpl="41" data-om-id="8714c018:43" data-edit-text="1" data-txt-key="txt_s1_5" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">El agua también se volvió parte de la conversación. FIFA tuvo primero una política restrictiva sobre el ingreso de botellas reutilizables, lo que generó backlash por la tensión entre calor, seguridad, consumo interno y sponsor exclusivity. Después de las críticas, la regla se ajustó: en Estados Unidos y Canadá se permitió ingresar una botella plástica descartable, sellada, de hasta 20 onzas. El dato es menor en apariencia, pero muy revelador: incluso una necesidad básica como hidratarse puede quedar atrapada en la arquitectura comercial del evento.</p>
+      <figure data-fig="blk_mr985ea91o34" style="margin-top: 0.4em; margin-bottom: 1.2em; display: block; float: right; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 43%; margin-left: 32px;" data-fig-init="{&quot;layout&quot;:&quot;derecha&quot;,&quot;width&quot;:43,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:&quot;assets/vid_blk_mr985ea91o34.mp4&quot;,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:false}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr985ea91o34_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr985ea91o34_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr985ea91o34" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: rgb(255, 255, 255); margin-top: 12px; cursor: text;">La reanucdación del juego se demora por los comerciales de televisión<div><span id="docs-internal-guid-3d6ffdb3-7fff-6651-3858-55e127ab3f31"><a href="https://x.com/i/status/2066449731539083588" style="text-decoration:none;"><span style="font-size: 10pt; font-family: Arial, sans-serif; color: rgb(17, 85, 204); background-color: transparent; font-variant: normal; text-decoration: underline; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">Fuente</span></a></span></div></figcaption></figure><p data-dc-tpl="42" data-om-id="8714c018:44" data-edit-text="1" data-txt-key="txt_s1_6" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">Ahí aparece una primera tensión: el cuidado del jugador y del espectador es incuestionable, pero la forma en que se implementa revela otra cosa. En el Mundial actual, incluso el descanso puede transformarse en inventario. Incluso el agua puede transformarse en negocio. Incluso la pausa puede transformarse en formato.</p>
+      <figure data-fig="blk_mr3xx38o72pc" style="margin-top: 0.4em; margin-bottom: 1.2em; display: none; float: right; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 49%; margin-left: 32px;" data-fig-init="{&quot;layout&quot;:&quot;derecha&quot;,&quot;width&quot;:49,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:null,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr3xx38o72pc_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr3xx38o72pc_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr3xx38o72pc" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: var(--r-ink-faint); margin-top: 12px; cursor: text;">Epígrafe — hacé clic para editar</figcaption></figure><p data-dc-tpl="43" data-om-id="8714c018:45" data-edit-text="1" data-txt-key="txt_s1_7" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">La implicancia para marcas es clara: el Mundial ya no se compra solo con spots alrededor del partido. Se compra en los intersticios, en los tiempos muertos, en los desplazamientos, en la sed, en el ticket, en la app, en la fan zone, en el bar y en la espera. La pasión sigue siendo el motor, pero el sistema aprendió a capturar valor de cada micro-momento.</p>
+    <p data-blk="blk_mr3pjsjuyjcd" data-edit-text="1" data-txt-key="txt_s1_8" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: var(--r-ink-soft); margin-bottom: 1.35em; text-wrap: pretty; display: none; cursor: text;">Escribí acá tu texto…</p><figure data-fig="blk_mr3pjy2zskyv" style="margin-top: 0.4em; margin-bottom: 1.2em; display: none; float: left; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 31%; margin-right: 32px;" data-fig-init="{&quot;layout&quot;:&quot;izquierda&quot;,&quot;width&quot;:31,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:null,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr3pjy2zskyv_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr3pjy2zskyv_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr3pjy2zskyv" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: var(--r-ink-faint); margin-top: 12px; cursor: text;">Epígrafe — hacé clic para editar</figcaption></figure><p data-blk="blk_mr3v07bq02t1" data-edit-text="1" data-txt-key="txt_s1_10" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;"><span style="font-size: 19.124px;">La implicancia para marcas es clara: el Mundial ya no se compra solo con spots alrededor del partido. Se compra en los intersticios, en los tiempos muertos, en los desplazamientos, en la sed, en el ticket, en la app, en la fan zone, en el bar y en la espera. La pasión sigue siendo el motor, pero el sistema aprendió a capturar valor de cada micro-momento.</span><span style="font-size: 19.124px;">La implicancia para marcas es clara: el Mundial ya no se compra solo con spots alrededor del partido. Se compra en los intersticios, en los tiempos muertos, en los desplazamientos, en la sed, en el ticket, en la app, en la fan zone, en el bar y en la espera. La pasión sigue siendo el motor, pero el sistema aprendió a capturar valor de cada micro-momento.</span><span style="font-size: 19.124px;">La implicancia para marcas es clara: el Mundial ya no se compra solo con spots alrededor del partido. Se compra en los intersticios, en los tiempos muertos, en los desplazamientos, en la sed, en el ticket, en la app, en la fan zone, en el bar y en la espera. La pasión sigue siendo el motor, pero el sistema aprendió a capturar valor de cada micro-momento.</span></p><p data-blk="blk_mr3v2kxbovkn" data-edit-text="1" data-txt-key="txt_s1_11" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: var(--r-ink-soft); margin-bottom: 1.35em; text-wrap: pretty; display: none; cursor: text;">Escribí acá tu texto…</p></section>
+
+    <section data-dc-tpl="44" id="s2" data-screen-label="02 Superbowlization" data-om-id="8714c018:46" data-inserter-added="1" style="display: flow-root; padding-top: clamp(50px, 9vh, 110px);">
+      <div data-dc-tpl="45" data-om-id="8714c018:47" style="border-top: 1px solid var(--r-hair); margin-bottom: 30px;"></div>
+      <h2 data-dc-tpl="46" data-om-id="8714c018:48" data-edit-text="1" data-txt-key="txt_s2_0" contenteditable="false" style="font-family: var(--r-display); font-weight: 700; font-size: clamp(28px, 3.6vw, 48px); line-height: 1.06; letter-spacing: -0.02em; margin-bottom: 0.7em; text-wrap: balance; color: rgb(255, 255, 255); cursor: text;">2. La superbowlización del fútbol</h2>
+      <p data-dc-tpl="47" data-om-id="8714c018:49" data-edit-text="1" data-txt-key="txt_s2_1" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">El cooling break no es solo una pausa. Es una señal de algo más amplio: el Mundial está incorporando cada vez más códigos del deporte-espectáculo estadounidense.</p>
+      <p data-dc-tpl="48" data-om-id="8714c018:50" data-edit-text="1" data-txt-key="txt_s2_2" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">Estados Unidos es una de las sedes principales y el Mundial parece absorber parte de su manera de entender el deporte. La lógica es conocida: momentos claramente paquetizables, pausas televisivas, marcas ocupando el relato, activaciones paralelas, celebrities, experiencias de hospitality, social content en tiempo real y expectativa alrededor del entretenimiento más allá del partido. El fútbol sigue siendo el centro, pero empieza a convivir con una arquitectura más cercana al show total.</p>
+      <p data-dc-tpl="49" data-om-id="8714c018:51" data-edit-text="1" data-txt-key="txt_s2_3" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">El halftime show de la final confirma esa dirección. FIFA y Global Citizen anunciaron un show histórico para la final del 19 de julio en el New York New Jersey Stadium, con Madonna, Shakira y BTS como headliners y curaduría de Chris Martin. Es la primera vez que la final mundialista se acerca tan explícitamente a la lógica de un gran show de medio tiempo global, más propia del imaginario Super Bowl que de la tradición futbolera.</p>
+
+      <figure data-dc-tpl="50" data-fig="f2" data-om-id="8714c018:52" style="margin-top: 0.4em; margin-bottom: 1.2em; display: block; float: right; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 38%; margin-left: 32px;" data-fig-init="{&quot;layout&quot;:&quot;derecha&quot;,&quot;width&quot;:38,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:&quot;assets/vid_f2.mp4&quot;,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}">
+        <div data-dc-tpl="51" data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-om-id="8714c018:53" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;" data-txt-key="side_f2_l">Escribí acá el texto del costado izquierdo…</div>
+        <div data-dc-tpl="52" data-media="" data-om-id="8714c018:54" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div>
+        <div data-dc-tpl="53" data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-om-id="8714c018:55" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;" data-txt-key="side_f2_r">Escribí acá el texto del costado derecho…</div>
+        <figcaption data-dc-tpl="54" contenteditable="false" data-om-id="8714c018:56" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: rgb(255, 255, 255); margin-top: 12px; cursor: text;" data-txt-key="cap_f2">Shakira ya ha participado en la apertura del mundial en Ciudad de México<div><span id="docs-internal-guid-708c566d-7fff-572a-6359-991a041ac103"><a href="https://www.youtube.com/shorts/QSkt15J_8c4" style="text-decoration:none;"><span style="font-size: 10pt; font-family: Arial, sans-serif; color: rgb(17, 85, 204); background-color: transparent; font-variant: normal; text-decoration: underline; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">Fuente</span></a></span></div></figcaption>
+      </figure>
+
+      <p data-dc-tpl="55" data-om-id="8714c018:57" data-edit-text="1" data-txt-key="txt_s2_4" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">El riesgo cultural es que el fútbol pierda algo de su continuidad ritual. Parte de su potencia está en que el partido fluye, se tensa, se enfría, se acelera y se vuelve impredecible sin pedir permiso. Cada interrupción programada puede ordenar mejor el negocio, pero también puede domesticar la experiencia.</p>
+      <p data-dc-tpl="56" data-om-id="8714c018:58" data-edit-text="1" data-txt-key="txt_s2_5" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">Para marcas y medios, la oportunidad es evidente: más momentos para aparecer, más narrativas para construir, más formatos para participar. Pero también hay una advertencia: no todo lo que genera inventario genera cultura. En un contexto de sobreestimulación, donde el consumidor ya vive rodeado de anuncios, cortar el partido para empujar más publicidad puede ser leído como intrusión. En un deporte tan sensible a la autenticidad como el fútbol, explotar cada segundo disponible también puede tener un costo simbólico.</p>
+    </section>
+
+    <section data-dc-tpl="57" id="s3" data-screen-label="03 Inclusion y exclusion" data-om-id="8714c018:59" data-inserter-added="1" style="display: flow-root; padding-top: clamp(50px, 9vh, 110px);">
+      <div data-dc-tpl="58" data-om-id="8714c018:60" style="border-top: 1px solid var(--r-hair); margin-bottom: 30px;"></div>
+      <h2 data-dc-tpl="59" data-om-id="8714c018:61" data-edit-text="1" data-txt-key="txt_s3_0" contenteditable="false" style="font-family: var(--r-display); font-weight: 700; font-size: clamp(28px, 3.6vw, 48px); line-height: 1.06; letter-spacing: -0.02em; margin-bottom: 0.7em; text-wrap: balance; color: rgb(255, 255, 255); cursor: text;">3. El Mundial inclusivo que también excluye</h2>
+      <p data-dc-tpl="60" data-om-id="8714c018:62" data-edit-text="1" data-txt-key="txt_s3_1" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">FIFA presenta al Mundial 2026 como el más grande de la historia: 48 selecciones, 104 partidos, 16 ciudades sede y tres países anfitriones. En escala, es una expansión histórica. Pero esa escala convive con una pregunta incómoda: ¿más grande significa necesariamente más inclusivo?</p>
+
+      <figure data-dc-tpl="61" data-fig="f3" data-om-id="8714c018:63" style="margin-top: 0.4em; margin-bottom: 1.2em; display: block; float: left; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 31%; margin-right: 32px;" data-fig-init="{&quot;layout&quot;:&quot;izquierda&quot;,&quot;width&quot;:31,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:&quot;assets/vid_f3.mp4&quot;,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}">
+        <div data-dc-tpl="62" data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-om-id="8714c018:64" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;" data-txt-key="side_f3_l">Escribí acá el texto del costado izquierdo…</div>
+        <div data-dc-tpl="63" data-media="" data-om-id="8714c018:65" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div>
+        <div data-dc-tpl="64" data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-om-id="8714c018:66" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;" data-txt-key="side_f3_r">Escribí acá el texto del costado derecho…</div>
+        <figcaption data-dc-tpl="65" contenteditable="false" data-om-id="8714c018:67" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: rgb(255, 255, 255); margin-top: 12px; cursor: text;" data-txt-key="cap_f3">Incluso Omar Artan, árbitro oficial FIFA, fue negado su ingreso a Estados Unidos.<br><div><a href="https://www.instagram.com/reels/DZa4aSDOs6K/" style="text-decoration: none;"><span style="font-size: 10pt; font-family: Arial, sans-serif; color: rgb(17, 85, 204); background-color: transparent; font-variant: normal; text-decoration: underline; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">Fuente</span></a>&nbsp; &nbsp;</div></figcaption>
+      </figure>
+
+      <p data-dc-tpl="66" data-om-id="8714c018:68" data-edit-text="1" data-txt-key="txt_s3_2" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">La ampliación del torneo abre la puerta a más países, más historias y más audiencias. Pero la experiencia mundialista no se distribuye de manera uniforme. En un evento atravesado por entradas caras, paquetes de hospitality, distancias enormes entre sedes, costos de alojamiento, derechos de transmisión y condiciones migratorias distintas según país de origen, la participación empieza a organizarse en niveles. No todos viven la experiencia de la misma manera.</p>
+      <p data-dc-tpl="67" data-om-id="8714c018:69" data-edit-text="1" data-txt-key="txt_s3_3" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">El Mundial, en su promesa, es universal. Pero en su experiencia concreta puede volverse profundamente segmentado. Hay quienes acceden al estadio, quienes acceden a la fan zone, quienes acceden al hospitality, quienes acceden al streaming, quienes acceden solo al resumen. El mismo evento que reúne al mundo también lo ordena por capas de acceso.</p>
+      <p data-dc-tpl="68" data-om-id="8714c018:70" data-edit-text="1" data-txt-key="txt_s3_4" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">Desde el negocio, esto muestra una tensión cada vez más frecuente en los grandes eventos globales: necesitan masividad simbólica, pero se financian con modelos de premiumización. Necesitan parecer de todos, pero dependen de entradas caras, paquetes VIP, derechos de transmisión, exclusividades comerciales y consumo capturado.</p>
+      <p data-dc-tpl="69" data-om-id="8714c018:71" data-edit-text="1" data-txt-key="txt_s3_5" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">El fútbol sigue siendo uno de los pocos lenguajes realmente populares del planeta, pero la experiencia mundialista se parece cada vez más a un privilegio administrado.</p>
+    </section>
+
+    <section data-dc-tpl="70" id="s4" data-screen-label="04 Brand exclusivity" data-om-id="8714c018:72" data-inserter-added="1" style="display: flow-root; padding-top: clamp(50px, 9vh, 110px);">
+      <div data-dc-tpl="71" data-om-id="8714c018:73" style="border-top: 1px solid var(--r-hair); margin-bottom: 30px;"></div>
+      <h2 data-dc-tpl="72" data-om-id="8714c018:74" data-edit-text="1" data-txt-key="txt_s4_0" contenteditable="false" style="font-family: var(--r-display); font-weight: 700; font-size: clamp(28px, 3.6vw, 48px); line-height: 1.06; letter-spacing: -0.02em; margin-bottom: 0.7em; text-wrap: balance; color: rgb(255, 255, 255); cursor: text;">4. El estadio como territorio de exclusividad marcaria</h2>
+      <p data-dc-tpl="73" data-om-id="8714c018:75" data-edit-text="1" data-txt-key="txt_s4_1" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">El Mundial no solo se volvió más exclusivo para los fans. También se volvió más exclusivo para las marcas.</p>
+      <figure data-fig="blk_mr3xzx6ojmkn" style="margin-top: 0.4em; margin-bottom: 1.2em; display: block; float: right; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 29%; margin-left: 32px;" data-fig-init="{&quot;layout&quot;:&quot;derecha&quot;,&quot;width&quot;:29,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:&quot;assets/vid_blk_mr3xzx6ojmkn.mp4&quot;,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:false}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr3xzx6ojmkn_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr3xzx6ojmkn_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr3xzx6ojmkn" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: rgb(255, 255, 255); margin-top: 12px; cursor: text;">Levi's fue una de las primeras marcas en capitalizar la censura.<div><span id="docs-internal-guid-3fa16b14-7fff-42ab-adc9-c3f2dd722c96"><a href="https://www.instagram.com/reels/DZksdjSsGT-/" style="text-decoration:none;"><span style="font-size: 10pt; font-family: Arial, sans-serif; color: rgb(17, 85, 204); background-color: transparent; font-variant: normal; text-decoration: underline; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">Fuente</span></a></span></div></figcaption></figure><p data-dc-tpl="74" data-om-id="8714c018:76" data-edit-text="1" data-txt-key="txt_s4_2" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">El estadio mundialista es, cada vez más, un espacio comercialmente curado. La política de “clean stadium” obliga a borrar, tapar o renombrar todo aquello que no pertenezca al ecosistema de sponsors oficiales de FIFA. Estadios con naming rights corporativos pasan a llamarse por su ciudad o zona geográfica. Logos históricos quedan cubiertos. Marcas presentes en productos cotidianos del estadio aparecen tachadas o tapadas. En Boston, por ejemplo, se reportó que el branding de Gillette en los asientos fue cubierto; en San Francisco, incluso etiquetas de condimentos quedaron tapadas para cumplir con las reglas de exclusividad.</p>
+
+      <figure data-dc-tpl="75" data-fig="f4" data-om-id="8714c018:77" style="margin-top: 0.4em; margin-bottom: 1.2em; display: none; float: right; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 35%; margin-left: 32px;" data-fig-init="{&quot;layout&quot;:&quot;derecha&quot;,&quot;width&quot;:35,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:null,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}">
+        <div data-dc-tpl="76" data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-om-id="8714c018:78" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;" data-txt-key="side_f4_l">Escribí acá el texto del costado izquierdo…</div>
+        <div data-dc-tpl="77" data-media="" data-om-id="8714c018:79" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div>
+        <div data-dc-tpl="78" data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-om-id="8714c018:80" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;" data-txt-key="side_f4_r">Escribí acá el texto del costado derecho…</div>
+        <figcaption data-dc-tpl="79" contenteditable="false" data-om-id="8714c018:81" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: var(--r-ink-faint); margin-top: 12px; cursor: text;" data-txt-key="cap_f4">Epígrafe — hacé clic para editar</figcaption>
+      </figure>
+
+      <p data-dc-tpl="80" data-om-id="8714c018:82" data-edit-text="1" data-txt-key="txt_s4_3" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; display: none; cursor: text;">La lógica es proteger a quienes pagan por estar ahí. FIFA vendió todos sus paquetes globales de sponsorship para este Mundial, con 16 posiciones globales completas y una expectativa de alrededor de USD 1.800 millones en ingresos por derechos de patrocinio. En un torneo expandido a 48 equipos y 104 partidos, la visibilidad es más valiosa que nunca. Cada segundo de cámara, cada cartel, cada nombre de estadio y cada superficie visible se vuelve parte de un inventario global.</p>
+      <figure data-fig="blk_mr3y0c78s5dz" style="margin-top: 0.4em; margin-bottom: 1.2em; display: block; float: left; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 45%; margin-right: 32px; clear: both;" data-fig-init="{&quot;layout&quot;:&quot;izquierda&quot;,&quot;width&quot;:45,&quot;type&quot;:&quot;imagen&quot;,&quot;image&quot;:&quot;assets/img_blk_mr3y0c78s5dz.png&quot;,&quot;video&quot;:null,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:false}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr3y0c78s5dz_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr3y0c78s5dz_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr3y0c78s5dz" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: rgb(255, 255, 255); margin-top: 12px; cursor: text;">Gillette también formó parte de la conversación.<br><br></figcaption></figure><p data-dc-tpl="81" data-om-id="8714c018:83" data-edit-text="1" data-txt-key="txt_s4_4" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">Pero lo interesante es que el control produjo el efecto contrario. Marcas no oficiales como Levi’s, Heinz y Gillette convirtieron la censura en lenguaje. Levi’s tapó su logo y lo transformó en contenido. Heinz lanzó su “Unofficial Stadium Ketchup” con etiqueta censurada. Gillette se sumó al gesto del logo cubierto. En vez de desaparecer, estas marcas hicieron de su ausencia el centro de la conversación.</p>
+      <figure data-fig="blk_mr3y144cgx4f" style="margin-top: 0.4em; margin-bottom: 1.2em; display: none; float: right; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 38%; margin-left: 32px;" data-fig-init="{&quot;layout&quot;:&quot;derecha&quot;,&quot;width&quot;:38,&quot;type&quot;:&quot;imagen&quot;,&quot;image&quot;:&quot;assets/img_blk_mr3y144cgx4f.png&quot;,&quot;video&quot;:null,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr3y144cgx4f_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr3y144cgx4f_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr3y144cgx4f" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: var(--r-ink-faint); margin-top: 12px; display: none; cursor: text;">Epígrafe — hacé clic para editar</figcaption></figure><p data-dc-tpl="82" data-om-id="8714c018:84" data-edit-text="1" data-txt-key="txt_s4_5" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">La exclusividad paga presencia, pero no siempre garantiza conversación. Las marcas no oficiales entendieron que quedar afuera también podía ser una historia. Convirtieron la censura en lenguaje, el borrado en idea creativa y la ausencia en reconocimiento. En un Mundial hipercontrolado, el gesto más visible fue justamente mostrarse cómo “víctima”.</p>
+      <figure data-fig="blk_mr9ap9h0rvts" style="margin-top: 0.4em; margin-bottom: 1.2em; display: block; float: right; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 54%; margin-left: 32px;" data-fig-init="{&quot;layout&quot;:&quot;derecha&quot;,&quot;width&quot;:54,&quot;type&quot;:&quot;imagen&quot;,&quot;image&quot;:&quot;assets/img_blk_mr9ap9h0rvts.jpeg&quot;,&quot;video&quot;:null,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:false}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr9ap9h0rvts_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr9ap9h0rvts_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr9ap9h0rvts" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: var(--r-ink-faint); margin-top: 12px; cursor: text;"><br></figcaption></figure><p data-dc-tpl="83" data-om-id="8714c018:85" data-edit-text="1" data-txt-key="txt_s4_6" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">La conexión con el fan cautivo es directa. Así como el Mundial organiza al consumidor dentro de una experiencia cada vez más monetizable, también organiza a las marcas dentro de una arquitectura de acceso. Algunas pueden estar oficialmente adentro. Otras quedan afuera. Pero en la cultura digital, quedar afuera no siempre significa quedar invisible.</p>
+      <p data-dc-tpl="84" data-om-id="8714c018:86" data-edit-text="1" data-txt-key="txt_s4_7" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">La implicancia es fuerte para el mundo marcario: la visibilidad ya no depende únicamente del derecho comprado. Depende de la capacidad de leer el momento, intervenirlo con inteligencia y convertir una limitación en relato. FIFA puede vender el espacio, pero no siempre puede controlar la conversación que se arma alrededor.</p>
+    </section>
+
+    <section data-dc-tpl="85" id="s5" data-screen-label="05 Borrowed legitimacy" data-om-id="8714c018:87" data-inserter-added="1" style="display: flow-root; padding-top: clamp(50px, 9vh, 110px);">
+      <div data-dc-tpl="86" data-om-id="8714c018:88" style="border-top: 1px solid var(--r-hair); margin-bottom: 30px;"></div>
+      <h2 data-dc-tpl="87" data-om-id="8714c018:89" data-edit-text="1" data-txt-key="txt_s5_0" contenteditable="false" style="font-family: var(--r-display); font-weight: 700; font-size: clamp(28px, 3.6vw, 48px); line-height: 1.06; letter-spacing: -0.02em; margin-bottom: 0.7em; text-wrap: balance; color: rgb(255, 255, 255); cursor: text;">5. La legitimidad se juega en eventos masivos</h2>
+      <p data-dc-tpl="88" data-om-id="8714c018:90" data-edit-text="1" data-txt-key="txt_s5_1" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">Hay industrias que no entran al Mundial solo para vender. Entran para legitimarse.</p>
+      <p data-dc-tpl="89" data-om-id="8714c018:91" data-edit-text="1" data-txt-key="txt_s5_2" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">El caso de crypto es claro. FIFA anunció a Kraken como Official Crypto Exchange Supporter del Mundial 2026, con activaciones de fan engagement en las 16 ciudades sede y con la promesa de acercar infraestructura cripto a una audiencia global. La propia FIFA habla de un torneo con potencial de involucrar a más de seis mil millones de fans en todo el mundo, una escala difícil de igualar para cualquier categoría que busque “normalizarse”.</p>
+
+      
+
+      <p data-dc-tpl="95" data-om-id="8714c018:97" data-edit-text="1" data-txt-key="txt_s5_3" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">Para crypto, el Mundial no es solo awareness. Es reputación prestada. Estar junto a FIFA permite salir del imaginario de nicho financiero, riesgo especulativo o cultura tech, y entrar en una escena emocionalmente transversal: familias, hinchas, países, camisetas, rituales, comunidad. La categoría se apoya en el fútbol para parecer menos periférica y más cotidiana.</p>
+      <figure data-fig="blk_mr9axoy5m7y1" style="margin-top: 2em; margin-bottom: 2em; display: block; float: none; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; clear: both;" data-fig-init="{&quot;layout&quot;:&quot;centrado&quot;,&quot;width&quot;:57,&quot;type&quot;:&quot;imagen&quot;,&quot;image&quot;:&quot;assets/img_blk_mr9axoy5m7y1.png&quot;,&quot;video&quot;:null,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:false}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr9axoy5m7y1_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 57%; margin: 0px auto;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr9axoy5m7y1_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr9axoy5m7y1" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: var(--r-ink-faint); margin-top: 12px; cursor: text;"><span id="docs-internal-guid-d73c12ee-7fff-bf2b-0e3b-2fa6a2c6c2fc"><a href="https://inside.fifa.com/tournament-organisation/commercial/media-releases/kraken-official-crypto-exchange-supporter-world-cup-2026" style="text-decoration:none;"><span style="font-size: 13pt; font-family: Arial, sans-serif; color: rgb(17, 85, 204); background-color: transparent; font-variant: normal; text-decoration: underline; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">Patrocinador oficial de intercambio de criptomonedas de la Copa Mundial de la FIFA 2026</span></a></span></figcaption></figure><p data-dc-tpl="96" data-om-id="8714c018:98" data-edit-text="1" data-txt-key="txt_s5_4" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">Algo similar ocurre con las apuestas deportivas. Betano fue nombrado Official Tournament Supporter para Europa y Sudamérica, reforzando un movimiento que ya se venía viendo en el fútbol local y en las transmisiones deportivas: las apuestas dejan de aparecer como un anuncio lateral y empiezan a mezclarse con la previa, la estadística, el pronóstico y la experiencia de “participar más” del partido.</p>
+      <figure data-fig="blk_mr9b3bzv6ak7" style="margin-top: 0.4em; margin-bottom: 1.2em; display: block; float: right; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 58%; margin-left: 32px;" data-fig-init="{&quot;layout&quot;:&quot;derecha&quot;,&quot;width&quot;:58,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:&quot;assets/vid_blk_mr9b3bzv6ak7.mp4&quot;,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:false}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr9b3bzv6ak7_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr9b3bzv6ak7_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr9b3bzv6ak7" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: rgb(255, 255, 255); margin-top: 12px; cursor: text;">Unilever activó mas de 35 marcas<div><span id="docs-internal-guid-06880d92-7fff-4931-bfc6-cc14eb0b0814"><a href="https://www.instagram.com/p/DZfXuGqD4uI/" style="text-decoration:none;"><span style="font-size: 10pt; font-family: Arial, sans-serif; color: rgb(17, 85, 204); background-color: transparent; font-variant: normal; text-decoration: underline; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">Fuente</span></a></span></div></figcaption></figure><p data-dc-tpl="97" data-om-id="8714c018:99" data-edit-text="1" data-txt-key="txt_s5_5" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">Pero esta lógica no termina en crypto o gambling. También aparece en grooming masculino y belleza. Unilever activó más de 35 marcas de personal care en torno al Mundial, incluyendo Dove, Dove Men+Care, Rexona y Axe, en más de 120 mercados. A la vez, marcas de skincare y haircare como Paula’s Choice, Clear Men, Dove, Vichy, L’Oréal Paris y Remington están usando el torneo como plataforma para elevar el cuidado masculino a escala global.</p>
+      <p data-dc-tpl="98" data-om-id="8714c018:100" data-edit-text="1" data-txt-key="txt_s5_6" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">El fútbol, históricamente codificado como territorio masculino, aparece ahora como puerta de entrada para hablar de piel, pelo, cuerpo, imagen, autoestima y cuidado. No desde la vanidad, sino desde la preparación, la confianza, el rendimiento y el ritual del fan.</p>
+      <p data-dc-tpl="99" data-om-id="8714c018:101" data-edit-text="1" data-txt-key="txt_s5_7" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">El Mundial funciona como una gran máquina de legitimación cultural. Algunas categorías llegan buscando ventas, pero otras buscan algo más profundo: parecer normales, confiables, deseables, parte del paisaje. El fútbol les presta emoción, escala y pertenencia.</p>
+    </section>
+
+    <section data-dc-tpl="100" id="s6" data-screen-label="06 Shared ritual" data-om-id="8714c018:102" data-inserter-added="1" style="display: flow-root; padding-top: clamp(50px, 9vh, 110px);">
+      <div data-dc-tpl="101" data-om-id="8714c018:103" style="border-top: 1px solid var(--r-hair); margin-bottom: 30px;"></div>
+      <h2 data-dc-tpl="102" data-om-id="8714c018:104" data-edit-text="1" data-txt-key="txt_s6_0" contenteditable="false" style="font-family: var(--r-display); font-weight: 700; font-size: clamp(28px, 3.6vw, 48px); line-height: 1.06; letter-spacing: -0.02em; margin-bottom: 0.7em; text-wrap: balance; color: rgb(255, 255, 255); cursor: text;">6. El Mundial como ritual compartido</h2>
+      <p data-dc-tpl="103" data-om-id="8714c018:105" data-edit-text="1" data-txt-key="txt_s6_1" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">Mientras el Mundial se vuelve más comercial, más tecnológico y más controlado, su fuerza más profunda sigue siendo humana: gente que se junta a mirar un partido.</p>
+      <figure data-fig="blk_mr3y2o40sgp4" style="margin-top: 0.4em; margin-bottom: 1.2em; display: none; float: right; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 37%; margin-left: 32px;" data-fig-init="{&quot;layout&quot;:&quot;derecha&quot;,&quot;width&quot;:37,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:null,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr3y2o40sgp4_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: rgb(255, 255, 255); min-width: 0px; opacity: 0.4; cursor: text;"><span style="color: rgb(255, 255, 255); font-size: 19.124px;">Turquía volvió al Mundial después de más de dos décadas y sus partidos activaron una escena casi cinematográfica: pantallas en espacios históricos, fan zones al amanecer, multitudes reunidas en lugares donde la memoria urbana se cruza con la pasión futbolera. En Estambul, la fortaleza de Yedikule fue uno de los espacios elegidos para ver los partidos en pantalla gigante, con entrada libre y una atmósfera más cercana a una ceremonia urbana que a una simple transmisión deportiva.</span></div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr3y2o40sgp4_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr3y2o40sgp4" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: rgb(255, 255, 255); margin-top: 12px; display: none; cursor: text;"><font color="#ffffff">Fortaleza de Yedikule, Estambul, Turquía.</font><div>Fanáticos se reúnen a las 7 am para alentar a la selección nacional.</div><div><span id="docs-internal-guid-3c151baf-7fff-aff5-4ddd-c67067723ad6"><a href="https://www.instagram.com/reels/DZjhNJHNnGV/" style="text-decoration:none;"><span style="font-size: 10pt; font-family: Arial, sans-serif; color: rgb(17, 85, 204); background-color: transparent; font-variant: normal; text-decoration: underline; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">Fuente</span></a></span></div></figcaption></figure><figure data-fig="blk_mr9bmrawwykc" style="margin-top: 0.4em; margin-bottom: 1.2em; display: block; float: right; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 32%; margin-left: 32px;" data-fig-init="{&quot;layout&quot;:&quot;derecha&quot;,&quot;width&quot;:32,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:&quot;assets/vid_blk_mr9bmrawwykc.mp4&quot;,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:false}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr9bmrawwykc_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr9bmrawwykc_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr9bmrawwykc" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: rgb(255, 255, 255); margin-top: 12px; cursor: text;"><div>Fanáticos se reúnen a las 7 am en la fortaleza de Yedikule, Estambul para alentar a la selección nacional</div><span id="docs-internal-guid-3c151baf-7fff-aff5-4ddd-c67067723ad6"><a href="https://www.instagram.com/reels/DZjhNJHNnGV/" style="text-decoration:none;"><span style="font-size: 10pt; font-family: Arial, sans-serif; color: rgb(17, 85, 204); background-color: transparent; font-variant: normal; text-decoration: underline; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">Fuente</span></a></span></figcaption></figure><p data-dc-tpl="104" data-om-id="8714c018:106" data-edit-text="1" data-txt-key="txt_s6_2" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">Turquía volvió al Mundial después de más de dos décadas y sus partidos activaron una escena casi cinematográfica: pantallas en espacios históricos, fan zones al amanecer, multitudes reunidas en lugares donde la memoria urbana se cruza con la pasión futbolera. En Estambul, la fortaleza de Yedikule fue uno de los espacios elegidos para ver los partidos en pantalla gigante, con entrada libre y una atmósfera más cercana a una ceremonia urbana que a una simple transmisión deportiva.</p>
+      <p data-dc-tpl="105" data-om-id="8714c018:107" data-edit-text="1" data-txt-key="txt_s6_3" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">Jordania también dejó una postal poderosa: miles de hinchas reunidos en el Teatro Romano de Amán para ver el debut mundialista de su selección. La imagen condensa algo que ninguna pauta puede fabricar del todo: un partido contemporáneo proyectado sobre una arquitectura de casi dos mil años, la historia antigua convertida por unas horas en tribuna popular.</p>
+
+      <figure data-dc-tpl="106" data-fig="f6" data-om-id="8714c018:108" style="margin-top: 0.4em; margin-bottom: 1.2em; display: block; float: left; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 27%; margin-right: 32px;" data-fig-init="{&quot;layout&quot;:&quot;izquierda&quot;,&quot;width&quot;:27,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:&quot;assets/vid_f6.mp4&quot;,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}">
+        <div data-dc-tpl="107" data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-om-id="8714c018:109" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;" data-txt-key="side_f6_l">Escribí acá el texto del costado izquierdo…</div>
+        <div data-dc-tpl="108" data-media="" data-om-id="8714c018:110" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div>
+        <div data-dc-tpl="109" data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-om-id="8714c018:111" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;" data-txt-key="side_f6_r">Escribí acá el texto del costado derecho…</div>
+        <figcaption data-dc-tpl="110" contenteditable="false" data-om-id="8714c018:112" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: rgb(255, 255, 255); margin-top: 12px; cursor: text;" data-txt-key="cap_f6">Miles de fanáticos reunidos en el teatro romano de Amán, Jordania<div><span id="docs-internal-guid-25e955f7-7fff-3e57-e786-7b5b5092fd94"><a href="https://www.instagram.com/reels/DZsu5c7Dxqm/" style="text-decoration:none;"><span style="font-size: 10pt; font-family: Arial, sans-serif; color: rgb(17, 85, 204); background-color: transparent; font-variant: normal; text-decoration: underline; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">Fuente</span></a></span></div></figcaption>
+      </figure>
+
+      <figure data-fig="blk_mr3y3qsqkdmr" style="margin-top: 0.4em; margin-bottom: 1.2em; display: none; float: left; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 24%; margin-right: 32px;" data-fig-init="{&quot;layout&quot;:&quot;izquierda&quot;,&quot;width&quot;:24,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:null,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr3y3qsqkdmr_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr3y3qsqkdmr_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr3y3qsqkdmr" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: var(--r-ink-faint); margin-top: 12px; cursor: text;">Epígrafe — hacé clic para editar</figcaption></figure><p data-dc-tpl="111" data-om-id="8714c018:113" data-edit-text="1" data-txt-key="txt_s6_4" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">Paraguay ofrece otra escena de intensidad colectiva. Tras eliminar a Alemania por penales, el país entró en una especie de suspensión emocional: festejos masivos, calles tomadas, héroes inesperados y feriado nacional declarado para celebrar la hazaña. El 30 de junio quedó marcado como una jornada excepcional, no solo deportiva, sino social.</p>
+      <figure data-fig="blk_mr3y3at2a25z" style="margin-top: 0.4em; margin-bottom: 1.2em; display: none; float: left; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 38%; margin-right: 32px;" data-fig-init="{&quot;layout&quot;:&quot;izquierda&quot;,&quot;width&quot;:38,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:null,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr3y3at2a25z_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr3y3at2a25z_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr3y3at2a25z" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: var(--r-ink-faint); margin-top: 12px; cursor: text;">Epígrafe — hacé clic para editar</figcaption></figure><p data-dc-tpl="112" data-om-id="8714c018:114" data-edit-text="1" data-txt-key="txt_s6_5" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">Hay algo muy profundo ahí: el Mundial puede alterar la rutina de un país. Puede convertir una plaza en tribuna, una madrugada en ceremonia, una calle en estadio, una comunidad migrante en hinchada. No es solo entretenimiento. Es una forma de sincronización social.</p>
+      <figure data-fig="blk_mr3y4brutxxq" style="margin-top: 0.4em; margin-bottom: 1.2em; display: none; float: right; outline: rgba(143, 155, 255, 0.35) dashed 1px; outline-offset: 6px; width: 38%; margin-left: 32px;" data-fig-init="{&quot;layout&quot;:&quot;derecha&quot;,&quot;width&quot;:38,&quot;type&quot;:&quot;video&quot;,&quot;image&quot;:null,&quot;video&quot;:null,&quot;slides&quot;:2,&quot;cur&quot;:0,&quot;imgs&quot;:[],&quot;hidden&quot;:true}"><div data-side="l" contenteditable="false" data-ph="Escribí acá el texto del costado izquierdo…" data-txt-key="side_blk_mr3y4brutxxq_l" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado izquierdo…</div><div data-media="" style="position: relative; min-width: 0px; width: 100%;"><div data-kind="imagen"><div data-imgslot="" style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div></div><div data-side="r" contenteditable="false" data-ph="Escribí acá el texto del costado derecho…" data-txt-key="side_blk_mr3y4brutxxq_r" style="display: none; font: 300 15px/1.65 var(--r-body); color: var(--r-ink-soft); min-width: 0px; opacity: 0.4; cursor: text;">Escribí acá el texto del costado derecho…</div><figcaption contenteditable="false" data-txt-key="cap_blk_mr3y4brutxxq" style="grid-column: 1 / -1; text-align: center; font: 400 12.5px/1.5 var(--r-body); color: var(--r-ink-faint); margin-top: 12px; cursor: text;">Epígrafe — hacé clic para editar</figcaption></figure><p data-dc-tpl="113" data-om-id="8714c018:115" data-edit-text="1" data-txt-key="txt_s6_6" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: rgb(255, 255, 255); margin-bottom: 1.35em; text-wrap: pretty; cursor: text;">La implicancia para marcas es delicada: no se trata de apropiarse del ritual, sino de entenderlo. Las marcas que mejor participan de un Mundial no son necesariamente las que más interrumpen, sino las que saben acompañar una práctica cultural que ya existe. En un torneo cada vez más monetizado, lo humano sigue siendo el activo más difícil de comprar y el más fácil de arruinar.</p>
+    </section>
+
+    <footer data-dc-tpl="114" data-screen-label="Cierre" data-om-id="8714c018:116" style="text-align: center; padding: clamp(70px, 14vh, 150px) 0px 90px;">
+      <img data-dc-tpl="115" id="lect-logo" src="data:image/png;base64,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" alt="BMC · Business Meets Culture" data-om-id="8714c018:117" style="height: clamp(22px, 2.4vw, 32px); opacity: 0.95;">
+      <div data-dc-tpl="116" data-om-id="8714c018:118" style="font: 600 clamp(11px,1vw,14px)/1 var(--r-body); letter-spacing: 0.32em; text-transform: uppercase; color: var(--r-acc2); margin-top: 24px;">@ENJOYBMC</div>
+      <p data-dc-tpl="117" data-om-id="8714c018:119" data-edit-text="1" data-txt-key="txt_footer_0" contenteditable="false" style="max-width: 64ch; margin: clamp(24px, 4vh, 40px) auto 0px; font: 400 11.5px/1.7 var(--r-body); color: var(--r-ink-faint); cursor: text;">Este documento es propiedad de BMC y contiene información confidencial preparada para el destinatario. Prohibida su distribución o reproducción sin autorización. Copyright © 2026 BMC. All rights reserved. BMC and the BMC logo are trademarks or registered trademarks of BMC.</p>
+    </footer>
+
+  <section id="sec_mr3pk95vwfjw" data-screen-label="Sección nueva" data-inserter-added="1" style="display: flow-root; padding-top: clamp(50px, 9vh, 110px);"><div style="border-top: 1px solid var(--r-hair); margin-bottom: 30px;"></div><h2 data-edit-text="1" data-txt-key="txt_sec_mr3pk95vwfjw_0" contenteditable="false" style="font-family: var(--r-display); font-weight: 700; font-size: clamp(28px, 3.6vw, 48px); line-height: 1.06; letter-spacing: -0.02em; margin-bottom: 0.7em; text-wrap: balance; color: var(--r-ink); display: none; cursor: text;">Nuevo título de sección</h2><p data-edit-text="1" data-txt-key="txt_sec_mr3pk95vwfjw_1" contenteditable="false" style="font: 300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body); color: var(--r-ink-soft); margin-bottom: 1.35em; text-wrap: pretty; display: none; cursor: text;">Escribí acá tu texto…</p></section></main></div>
+<script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+<script>
+(function(){
+// Scroll progress bar (independent of which background renders).
+window.addEventListener("scroll",function(){var el=document.documentElement;var p=el.scrollHeight>el.clientHeight?(el.scrollTop||document.body.scrollTop)/(el.scrollHeight-el.clientHeight):0;document.getElementById("lect-prog").style.transform="scaleX("+Math.max(0,Math.min(1,p)).toFixed(4)+")";},{passive:true});
+
+var cv=document.getElementById("lect-bg");
+// 3D stadium background (Three.js). Falls back to the hex grid if the CDN is unreachable.
+if (window.THREE) { initStadium(cv); document.documentElement.setAttribute('data-bg','stadium'); }
+else { initHex(cv); document.documentElement.setAttribute('data-bg','hex'); }
+
+function initStadium(el){
+  var THREE = window.THREE;
+  var pal = { base: '#05060c', hi: [150,165,255], hot: [230,58,31] };
+  var renderer = new THREE.WebGLRenderer({ canvas: el, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setClearColor(pal.base, 1);
+  if (THREE.SRGBColorSpace) renderer.outputColorSpace = THREE.SRGBColorSpace;
+  var scene = new THREE.Scene();
+  scene.fog = new THREE.Fog(pal.base, 5.5, 13);
+  var camera = new THREE.PerspectiveCamera(48, 1, 0.1, 100);
+
+  // ---- crowd bowl (points, subtle per-seat bob) ----
+  var N = 2400;
+  var positions = new Float32Array(N * 3), colors = new Float32Array(N * 3), phase = new Float32Array(N), baseY = new Float32Array(N);
+  var midC = new THREE.Color('rgb(' + pal.hi.join(',') + ')'), hotC = new THREE.Color('rgb(' + pal.hot.join(',') + ')'), dimC = midC.clone().multiplyScalar(0.55);
+  for (var i = 0; i < N; i++){
+    var tier = Math.floor(Math.random() * 16), radius = 2.85 + tier * 0.3, height = -1.15 + tier * 0.185 + (Math.random() - 0.5) * 0.08, ang = Math.random() * Math.PI * 2;
+    positions[i * 3] = Math.cos(ang) * radius; positions[i * 3 + 1] = height; positions[i * 3 + 2] = Math.sin(ang) * radius * 0.6;
+    baseY[i] = height; phase[i] = Math.random() * Math.PI * 2;
+    var r = Math.random(); var col = r < 0.06 ? hotC : r < 0.75 ? midC : dimC;
+    colors[i * 3] = col.r; colors[i * 3 + 1] = col.g; colors[i * 3 + 2] = col.b;
+  }
+  var geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  geo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+  var points = new THREE.Points(geo, new THREE.PointsMaterial({ size: 0.07, vertexColors: true, transparent: true, opacity: 0.95, sizeAttenuation: true, fog: true }));
+  scene.add(points);
+
+  // ---- roof rim (silhouette above the bowl) ----
+  var roof = new THREE.Mesh(new THREE.TorusGeometry(5.05, 0.16, 8, 56), new THREE.MeshStandardMaterial({ color: 0x14161e, roughness: 0.8, metalness: 0.2 }));
+  roof.rotation.x = Math.PI / 2; roof.position.y = 1.85; roof.scale.set(1, 0.62, 1); scene.add(roof);
+
+  // ---- pitch: grass texture with mowing stripes + line markings ----
+  var pc = document.createElement('canvas'); pc.width = 512; pc.height = 340;
+  var pctx = pc.getContext('2d');
+  var stripes = 9;
+  for (var s = 0; s < stripes; s++){ pctx.fillStyle = s % 2 ? '#1c5c30' : '#215f34'; pctx.fillRect(0, s * pc.height / stripes, pc.width, pc.height / stripes + 1); }
+  pctx.strokeStyle = 'rgba(255,255,255,0.85)'; pctx.lineWidth = 3;
+  pctx.strokeRect(14, 14, pc.width - 28, pc.height - 28);
+  pctx.beginPath(); pctx.moveTo(pc.width / 2, 14); pctx.lineTo(pc.width / 2, pc.height - 14); pctx.stroke();
+  pctx.beginPath(); pctx.arc(pc.width / 2, pc.height / 2, 46, 0, 6.283); pctx.stroke();
+  pctx.beginPath(); pctx.arc(pc.width / 2, pc.height / 2, 3, 0, 6.283); pctx.fillStyle = '#fff'; pctx.fill();
+  [14, pc.width - 14].forEach(function (x, side) {
+    pctx.strokeRect(side === 0 ? 14 : pc.width - 14 - 96, pc.height / 2 - 78, 96, 156);
+    pctx.strokeRect(side === 0 ? 14 : pc.width - 14 - 40, pc.height / 2 - 44, 40, 88);
+  });
+  var pitchTex = new THREE.CanvasTexture(pc);
+  if (THREE.SRGBColorSpace) pitchTex.colorSpace = THREE.SRGBColorSpace;
+  var pitch = new THREE.Mesh(new THREE.PlaneGeometry(4.6, 3.05), new THREE.MeshStandardMaterial({ map: pitchTex, roughness: 0.95 }));
+  pitch.rotation.x = -Math.PI / 2; pitch.position.y = -1.2; scene.add(pitch);
+  var pitchGlow = new THREE.Mesh(new THREE.CircleGeometry(3.0, 48), new THREE.MeshBasicMaterial({ color: 0x0c2f1a, transparent: true, opacity: 0.28 }));
+  pitchGlow.rotation.x = -Math.PI / 2; pitchGlow.position.y = -1.21; scene.add(pitchGlow);
+
+  // ---- lighting: ambient + 4 floodlight towers ----
+  scene.add(new THREE.AmbientLight(0x8892ff, 0.55));
+  var floodPos = [[3.9, 3.3, 2.6], [-3.9, 3.3, 2.6], [3.9, 3.3, -2.6], [-3.9, 3.3, -2.6]];
+  var glowTexCanvas = document.createElement('canvas'); glowTexCanvas.width = glowTexCanvas.height = 64;
+  var gctx = glowTexCanvas.getContext('2d');
+  var rg = gctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+  rg.addColorStop(0, 'rgba(255,250,230,1)'); rg.addColorStop(1, 'rgba(255,250,230,0)');
+  gctx.fillStyle = rg; gctx.fillRect(0, 0, 64, 64);
+  var glowTex = new THREE.CanvasTexture(glowTexCanvas);
+  floodPos.forEach(function (p) {
+    var pole = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.04, p[1] + 1.2, 6), new THREE.MeshStandardMaterial({ color: 0x1a1c24 }));
+    pole.position.set(p[0], (p[1] - 1.2) / 2, p[2]); scene.add(pole);
+    var lamp = new THREE.PointLight(0xfff6e0, 1.35, 9, 2);
+    lamp.position.set(p[0], p[1], p[2]); scene.add(lamp);
+    var spr = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, color: 0xfff6e0, transparent: true, depthWrite: false }));
+    spr.scale.set(0.55, 0.55, 1); spr.position.copy(lamp.position); scene.add(spr);
+  });
+
+  var ball = new THREE.Mesh(new THREE.SphereGeometry(0.2, 20, 20), new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.4 }));
+  scene.add(ball);
+
+  function resize(){
+    var w = window.innerWidth, h = window.innerHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h; camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  var t = 0;
+  var posAttr = geo.attributes.position;
+  var ENERGY = 1; // subí/bajá esta constante (0.6–2) para acelerar o frenar toda la escena
+  function animate(){
+    requestAnimationFrame(animate);
+    t += 0.008 * ENERGY;
+    for (var i = 0; i < N; i++) posAttr.array[i * 3 + 1] = baseY[i] + Math.sin(t * 3 + phase[i]) * 0.012;
+    posAttr.needsUpdate = true;
+    camera.position.set(Math.sin(t * 0.32) * 6.6, 1.9 + Math.sin(t * 0.5) * 0.3, Math.cos(t * 0.32) * 6.6);
+    camera.lookAt(0, 0.2, 0);
+    ball.position.set(Math.sin(t * 1.5) * 1.1, -1.1 + Math.abs(Math.sin(t * 2.7)) * 0.4, Math.cos(t * 1.5) * 0.8);
+    renderer.render(scene, camera);
+  }
+  animate();
+}
+
+// Fallback: original hex-grid background (used only if Three.js failed to load).
+function initHex(cv){
+  var C={"base":"#05060c","mid":[58,60,255],"hi":[150,165,255],"dark":true,"e":1,"d":1};
+  var ctx=cv.getContext("2d"),dpr=Math.min(window.devicePixelRatio||1,1.5),W=0,H=0,t=0,last=performance.now(),mx=.5,my=.5,tmx=.5,tmy=.5;
+  function size(){var r=cv.getBoundingClientRect();W=r.width;H=r.height;cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);}
+  size();window.addEventListener("resize",size);
+  window.addEventListener("pointermove",function(ev){tmx=ev.clientX/W;tmy=ev.clientY/H;});
+  function draw(){requestAnimationFrame(draw);var now=performance.now(),dt=(now-last)/1000;last=now;if(dt>.05)dt=.0166;t+=dt*C.e;mx+=(tmx-mx)*.05;my+=(tmy-my)*.05;
+  ctx.fillStyle=C.base;ctx.fillRect(0,0,W,H);
+  var R=Math.max(26,48/Math.max(.6,C.d)),hw=Math.sqrt(3)*R,vs=1.5*R,lineA=C.dark?.1:.12,fillA=C.dark?.2:.1;
+  var cxm=W*(.32+mx*.36),cym=H*(.36+my*.32),row=0;
+  for(var y=-R;y<H+R;y+=vs,row++){var xo=(row%2)?hw/2:0;
+  for(var x=-R;x<W+hw;x+=hw){var hx=x+xo,hy=y,dd=Math.hypot(hx-cxm,hy-cym),lit=Math.max(0,Math.sin(dd*.014-t*1.5*C.e));
+  ctx.beginPath();for(var k=0;k<6;k++){var a=Math.PI/180*(60*k-90),px=hx+R*Math.cos(a),py=hy+R*Math.sin(a);if(k===0)ctx.moveTo(px,py);else ctx.lineTo(px,py);}ctx.closePath();
+  if(lit>.28){ctx.fillStyle="rgba("+C.mid[0]+","+C.mid[1]+","+C.mid[2]+","+(lit*fillA).toFixed(3)+")";ctx.fill();}
+  ctx.strokeStyle="rgba("+C.hi[0]+","+C.hi[1]+","+C.hi[2]+","+lineA+")";ctx.lineWidth=1;ctx.stroke();}}}
+  requestAnimationFrame(draw);
+}
+})();
+</script>
+<script>
+// FWC 2026 — shared editor runtime. Loaded both by the live design component
+// and inlined into every exported HTML/site, so downloads stay fully editable.
+(function () {
+  function qs(el, s) { return el.querySelector(s); }
+  function qsa(el, s) { return Array.prototype.slice.call(el.querySelectorAll(s)); }
+
+  var Editor = {};
+  var LOCAL_FILES = {};
+  var LOCAL_URLS = {};
+  var editMode = false;
+  var LOCKED = false;
+  var EXPORTED = false; // true for any exported/published file: ignore localStorage, trust baked HTML
+  var editBtn = null;
+  var txtBar = null;
+  var curTxt = null;
+  var avIO = null;
+  var hoverPlus = null, hoverRefNode = null, hoverSection = null;
+
+  function watchAV(scope) {
+    if (!('IntersectionObserver' in window)) return;
+    if (!avIO) {
+      avIO = new IntersectionObserver(function (es) {
+        es.forEach(function (x) {
+          var v = x.target;
+          if (x.isIntersecting) { v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+          else { v.pause(); }
+        });
+      }, { threshold: 0.45 });
+    }
+    qsa(scope || document, 'video[data-fwc-av]').forEach(function (v) { avIO.observe(v); });
+  }
+
+  function dropzoneHTML(msg, sub) {
+    return '<div data-dz style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;width:100%;height:100%;min-height:160px;aspect-ratio:16/9;border:1.5px dashed rgba(128,140,180,.5);border-radius:10px;cursor:pointer;text-align:center;padding:16px;box-sizing:border-box"><div style="font:500 12.5px/1.5 Helvetica,Arial,sans-serif;color:rgba(150,160,190,.9)">' + msg + '<br><span style="font-weight:400;opacity:.7">' + sub + '</span></div></div>';
+  }
+  function wireDropzone(dz, accept, testFn, onPick) {
+    function openPicker() {
+      if (!editMode) return;
+      var inp = document.createElement('input');
+      inp.type = 'file'; inp.accept = accept;
+      inp.addEventListener('change', function () { if (inp.files[0]) onPick(inp.files[0]); });
+      inp.click();
+    }
+    dz.addEventListener('click', openPicker);
+    dz.addEventListener('dragover', function (e) { if (editMode) { e.preventDefault(); dz.style.borderColor = 'var(--r-acc,#3a3cff)'; } });
+    dz.addEventListener('dragleave', function () { dz.style.borderColor = 'rgba(128,140,180,.5)'; });
+    dz.addEventListener('drop', function (e) {
+      if (!editMode) return;
+      e.preventDefault(); dz.style.borderColor = 'rgba(128,140,180,.5)';
+      var f = e.dataTransfer.files && e.dataTransfer.files[0];
+      if (f && testFn(f)) onPick(f);
+    });
+  }
+  function setLocalMedia(key, file, cb) {
+    LOCAL_FILES[key] = file;
+    if (LOCAL_URLS[key]) URL.revokeObjectURL(LOCAL_URLS[key]);
+    LOCAL_URLS[key] = URL.createObjectURL(file);
+    if (file.size < 5500000) {
+      var fr = new FileReader();
+      fr.onload = function () { try { localStorage.setItem('fwcL_' + key, fr.result); } catch (e) {} if (cb) cb(); };
+      fr.readAsDataURL(file);
+    } else if (cb) cb();
+  }
+  function resolveLocalURL(key) {
+    if (LOCAL_URLS[key]) return Promise.resolve(LOCAL_URLS[key]);
+    try {
+      var b64 = localStorage.getItem('fwcL_' + key);
+      if (b64) return fetch(b64).then(function (r) { return r.blob(); }).then(function (bl) { var u = URL.createObjectURL(bl); LOCAL_URLS[key] = u; return u; });
+    } catch (e) {}
+    return Promise.resolve(null);
+  }
+  async function resolveMediaAsset(key, meta, asZip, zip) {
+    if (typeof meta === 'string') return meta;
+    if (!meta || !meta.local) return null;
+    var blob = LOCAL_FILES[key];
+    if (!blob) {
+      try { var b64 = localStorage.getItem('fwcL_' + key); if (b64) blob = await (await fetch(b64)).blob(); } catch (e) {}
+    }
+    if (!blob) return null;
+    var mime = meta.mime || blob.type || 'application/octet-stream';
+    if (!asZip) {
+      return new Promise(function (res, rej) { var fr = new FileReader(); fr.onload = function () { res(fr.result); }; fr.onerror = rej; fr.readAsDataURL(blob); });
+    }
+    var ext = (mime.split('/')[1] || 'bin').split(';')[0];
+    var name = key.replace(/[^a-z0-9_]/gi, '') + '.' + ext;
+    var buf = await blob.arrayBuffer();
+    zip.file('assets/' + name, buf);
+    return 'assets/' + name;
+  }
+
+  function saveFig(id, st) { try { localStorage.setItem('fwcL_fig_' + id, JSON.stringify(st)); } catch (e) {} }
+
+  function mediaKindOf(url, meta) {
+    var m = (meta && meta.mime) || '';
+    if (!m && typeof url === 'string') { var dm = /^data:([^;,]+)/.exec(url); if (dm) m = dm[1]; }
+    if (m.indexOf('image/') === 0) return 'img';
+    if (m.indexOf('video/') === 0) return 'video';
+    if (typeof url === 'string' && !m) {
+      if (/\.(png|jpe?g|gif|webp|avif|svg)(\?|$)/i.test(url)) return 'img';
+      if (/\.(mp4|webm|mov|m4v|ogg)(\?|$)/i.test(url)) return 'video';
+      return 'img';
+    }
+    return m ? 'file' : 'img';
+  }
+  function renderMediaEl(url, meta) {
+    var kind = mediaKindOf(url, meta);
+    if (kind === 'video') return '<video src="' + url + '" data-fwc-av muted playsinline controls loop style="display:block;width:100%;height:100%;object-fit:cover;border-radius:10px;background:#000"></video>';
+    if (kind === 'img') return '<img src="' + url + '" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:10px">';
+    var nm = (meta && meta.name) || 'archivo adjunto';
+    return '<div style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;border:1px solid rgba(128,140,180,.4);border-radius:10px;font:500 13px/1.4 Helvetica,Arial,sans-serif;color:rgba(200,206,222,.85);padding:16px;text-align:center;word-break:break-all;box-sizing:border-box">Archivo: ' + nm + '</div>';
+  }
+
+  function videoEmbedHTML(url) {
+    var yt = url.match(/(?:youtu\.be\/|[?&]v=|youtube\.com\/shorts\/|youtube\.com\/embed\/)([\w-]{6,})/);
+    if (yt) return '<div style="position:relative;width:100%;aspect-ratio:16/9"><iframe src="https://www.youtube.com/embed/' + yt[1] + '" style="position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:10px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+    var vm = url.match(/vimeo\.com\/(\d+)/);
+    if (vm) return '<div style="position:relative;width:100%;aspect-ratio:16/9"><iframe src="https://player.vimeo.com/video/' + vm[1] + '" style="position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:10px" allowfullscreen></iframe></div>';
+    if (/\.gif(\?|$)/i.test(url)) return '<img src="' + url + '" alt="GIF" style="display:block;width:100%;border-radius:10px">';
+    return '<video src="' + url + '" data-fwc-av muted playsinline controls loop style="display:block;width:100%;border-radius:10px;background:#000"></video>';
+  }
+
+  function applyLayout(fig) {
+    var st = fig._st, media = qs(fig, '[data-media]'), sides = qsa(fig, '[data-side]'), w = st.width;
+    fig.style.display = 'block'; fig.style.width = ''; fig.style.marginLeft = ''; fig.style.marginRight = '';
+    fig.style.cssFloat = 'none'; fig.style.gridTemplateColumns = ''; fig.style.gap = ''; fig.style.clear = '';
+    media.style.width = ''; media.style.margin = '';
+    sides.forEach(function (s) { s.style.display = 'none'; });
+    if (st.layout === 'completo') { fig.style.width = '100vw'; fig.style.marginLeft = 'calc(50% - 50vw)'; fig.style.marginTop = '2.4em'; fig.style.marginBottom = '2.4em'; media.style.width = '100%'; fig.style.clear = 'both'; }
+    else if (st.layout === 'centrado') { fig.style.marginTop = '2em'; fig.style.marginBottom = '2em'; media.style.width = w + '%'; media.style.margin = '0 auto'; fig.style.clear = 'both'; }
+    else if (st.layout === 'izquierda' || st.layout === 'derecha') { fig.style.cssFloat = st.layout === 'izquierda' ? 'left' : 'right'; fig.style.width = Math.min(w, 60) + '%'; fig.style.marginTop = '.4em'; fig.style.marginBottom = '1.2em'; if (st.layout === 'izquierda') fig.style.marginRight = '32px'; else fig.style.marginLeft = '32px'; media.style.width = '100%'; }
+    else if (st.layout === 'costados') { fig.style.display = 'grid'; fig.style.gridTemplateColumns = '1fr ' + Math.max(30, Math.min(w, 72)) + '% 1fr'; fig.style.gap = '26px'; fig.style.marginTop = '2em'; fig.style.marginBottom = '2em'; media.style.width = '100%'; sides.forEach(function (s) { s.style.display = 'block'; }); fig.style.clear = 'both'; }
+    scheduleFloatFix();
+  }
+
+  // ---- Anti-overlap for floated figures ----
+  // Two floats on the same side at the same height crush the text between them
+  // (and can visually pile up). When that happens, push the later one below.
+  function fixFloatOverlap() {
+    qsa(document, 'section[id]').forEach(function (sec) {
+      var prev = [];
+      qsa(sec, ':scope > figure[data-fig]').forEach(function (f) {
+        var st = f._st;
+        if (!st || st.hidden || f.style.display === 'none') return;
+        if (st.layout !== 'izquierda' && st.layout !== 'derecha') return;
+        f.style.clear = '';
+        var side = st.layout === 'izquierda' ? 'left' : 'right';
+        var r = f.getBoundingClientRect();
+        for (var i = 0; i < prev.length; i++) {
+          var p = prev[i], pr = p.el.getBoundingClientRect();
+          var vOverlap = r.top < pr.bottom - 6 && r.bottom > pr.top + 6;
+          if (!vOverlap) continue;
+          var wSum = Math.min(st.width, 60) + Math.min(p.st.width, 60);
+          // Same side never coexists at the same height; opposite sides only if
+          // they leave the text at least ~half the column width.
+          if (p.side === side || wSum > 45) {
+            f.style.clear = (p.side === side) ? side : 'both';
+            r = f.getBoundingClientRect();
+          }
+        }
+        prev.push({ el: f, side: side, st: st });
+      });
+    });
+  }
+  var floatFixTimer = null;
+  function scheduleFloatFix() {
+    clearTimeout(floatFixTimer);
+    floatFixTimer = setTimeout(fixFloatOverlap, 120);
+  }
+
+  function buildImageSlot(host, key, meta, onChange, anyFile) {
+    var accept = anyFile ? '*/*' : 'image/*';
+    var test = anyFile ? function () { return true; } : function (f) { return f.type.indexOf('image/') === 0; };
+    var emptyMsg = anyFile ? 'Arrastrá una foto, un video o cualquier archivo' : 'Hacé clic o arrastrá una imagen';
+    var emptySub = anyFile ? 'Se muestra lo que se pueda renderizar' : 'JPG · PNG · WEBP · GIF';
+    function pick(f) {
+      setLocalMedia(key, f, function () {});
+      onChange({ local: true, name: f.name, mime: f.type || '' });
+    }
+    if (!meta) {
+      if (LOCKED) { host.innerHTML = ''; return; }
+      host.innerHTML = dropzoneHTML(emptyMsg, emptySub);
+      wireDropzone(host.firstChild, accept, test, pick);
+      return;
+    }
+    var urlP = (typeof meta === 'string') ? Promise.resolve(meta) : resolveLocalURL(key);
+    urlP.then(function (url) {
+      if (url) {
+        host.innerHTML = '<div style="width:100%;height:100%">' + renderMediaEl(url, (typeof meta === 'object') ? meta : null) + '</div>';
+        if (!LOCKED) wireDropzone(host.firstChild, accept, test, pick);
+        watchAV(host);
+      } else {
+        if (LOCKED) { host.innerHTML = ''; return; }
+        host.innerHTML = dropzoneHTML('Contenido no disponible en este dispositivo', 'Volvé a arrastrarlo');
+        wireDropzone(host.firstChild, accept, test, pick);
+      }
+    });
+  }
+
+  function buildVideo(fig) {
+    var st = fig._st, id = fig.getAttribute('data-fig'), vw = qs(fig, '[data-kind="video"]'), key = 'vid_' + id;
+    if (!st.video) {
+      if (LOCKED) { vw.innerHTML = ''; return; }
+      vw.innerHTML = dropzoneHTML('Hacé clic y pegá una URL, o arrastrá un video', 'YouTube · Vimeo · URL · .mp4 · .webm · .mov · .gif');
+      wireDropzone(vw.firstChild, 'video/*,.gif', function (f) { return /^video\//.test(f.type) || /image\/gif/.test(f.type); }, function (f) {
+        setLocalMedia(key, f, function () {});
+        setVideo(fig, { local: true, name: f.name, mime: f.type || 'video/mp4' });
+      });
+    } else if (typeof st.video === 'string') {
+      vw.innerHTML = videoEmbedHTML(st.video);
+      watchAV(vw);
+    } else if (st.video.local) {
+      resolveLocalURL(key).then(function (url) {
+        if (url) {
+          vw.innerHTML = '<video src="' + url + '" data-fwc-av muted playsinline controls loop style="display:block;width:100%;border-radius:10px;background:#000"></video>';
+          watchAV(vw);
+        } else if (LOCKED) {
+          vw.innerHTML = '';
+        } else {
+          vw.innerHTML = dropzoneHTML('Video no disponible en este dispositivo', 'Volvé a arrastrarlo');
+          wireDropzone(vw.firstChild, 'video/*,.gif', function (f) { return /^video\//.test(f.type) || /image\/gif/.test(f.type); }, function (f) {
+            setLocalMedia(key, f, function () {});
+            setVideo(fig, { local: true, name: f.name, mime: f.type || 'video/mp4' });
+          });
+        }
+      });
+    }
+  }
+  function pickLocalVideo(fig) {
+    var key = 'vid_' + fig.getAttribute('data-fig');
+    var input = document.createElement('input');
+    input.type = 'file'; input.accept = 'video/*,.gif';
+    input.addEventListener('change', function () {
+      var f = input.files[0]; if (!f) return;
+      setLocalMedia(key, f, function () {});
+      setVideo(fig, { local: true, name: f.name, mime: f.type || 'video/mp4' });
+    });
+    input.click();
+  }
+  function setVideo(fig, val) { var id = fig.getAttribute('data-fig'), st = fig._st; st.video = val; st.type = 'video'; saveFig(id, st); buildVideo(fig); refreshBar(fig); }
+  function promptVideo(fig) {
+    var st = fig._st, cur = (typeof st.video === 'string') ? st.video : '';
+    var u = window.prompt('Pegá la URL del video (YouTube, Vimeo, .mp4, .webm o .gif). Cancelá y arrastrá un archivo si preferís uno local:', cur);
+    if (u === null || !u.trim()) return;
+    setVideo(fig, u.trim());
+  }
+
+  function buildCarousel(fig) {
+    var st = fig._st, id = fig.getAttribute('data-fig'), cw = qs(fig, '[data-kind="carrusel"]');
+    cw.innerHTML = '';
+    var stage = document.createElement('div');
+    stage.style.cssText = 'position:relative;width:100%;aspect-ratio:16/9';
+    for (var n = 0; n < st.slides; n++) { var host = document.createElement('div'); host.setAttribute('data-imgslot', ''); host.setAttribute('data-idx', n); host.style.cssText = 'position:absolute;inset:0;width:100%;height:100%'; stage.appendChild(host); }
+    function mkArrow(dir) {
+      var b = document.createElement('button');
+      b.textContent = dir < 0 ? '\u2039' : '\u203a';
+      b.style.cssText = 'position:absolute;top:50%;transform:translateY(-50%);' + (dir < 0 ? 'left:10px' : 'right:10px') + ';width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(8,9,14,.66);color:#fff;font:400 20px/1 Helvetica,Arial,sans-serif;cursor:pointer;z-index:5';
+      b.addEventListener('click', function () { st.cur = (st.cur + dir + st.slides) % st.slides; saveFig(id, st); showSlide(fig); });
+      return b;
+    }
+    stage.appendChild(mkArrow(-1)); stage.appendChild(mkArrow(1));
+    cw.appendChild(stage);
+    var dots = document.createElement('div');
+    dots.setAttribute('data-dots', '');
+    dots.style.cssText = 'display:flex;gap:7px;justify-content:center;margin-top:10px';
+    for (var m = 0; m < st.slides; m++) {
+      (function (m) {
+        var d = document.createElement('button');
+        d.style.cssText = 'width:8px;height:8px;border-radius:50%;border:0;padding:0;cursor:pointer;background:rgba(128,140,180,.4)';
+        d.addEventListener('click', function () { st.cur = m; saveFig(id, st); showSlide(fig); });
+        dots.appendChild(d);
+      })(m);
+    }
+    cw.appendChild(dots);
+    if (st.cur >= st.slides) st.cur = 0;
+    for (var k = 0; k < st.slides; k++) buildCarouselSlide(fig, k);
+    showSlide(fig);
+  }
+  function buildCarouselSlide(fig, n) {
+    var id = fig.getAttribute('data-fig'), key = 'img_' + id + '_' + n, host = fig.querySelector('[data-kind="carrusel"] [data-idx="' + n + '"]');
+    if (!host) return;
+    var meta = (fig._st.imgs && fig._st.imgs[n]) || null;
+    buildImageSlot(host, key, meta, function (newMeta) {
+      fig._st.imgs = fig._st.imgs || [];
+      fig._st.imgs[n] = newMeta;
+      saveFig(id, fig._st);
+      buildCarouselSlide(fig, n);
+      refreshBar(fig);
+    }, true);
+  }
+  function showSlide(fig) {
+    var st = fig._st, cw = qs(fig, '[data-kind="carrusel"]');
+    qsa(cw, '[data-imgslot]').forEach(function (s, k) { s.style.opacity = k === st.cur ? '1' : '0'; s.style.pointerEvents = (k === st.cur && editMode) ? 'auto' : 'none'; s.style.zIndex = k === st.cur ? '2' : '1'; });
+    qsa(cw, '[data-dots] button').forEach(function (d, k) { d.style.background = k === st.cur ? 'var(--r-acc,#3a3cff)' : 'rgba(128,140,180,.4)'; });
+  }
+
+  function applyMedia(fig) {
+    var st = fig._st, media = qs(fig, '[data-media]');
+    var iw = qs(media, '[data-kind="imagen"]'), vw = qs(media, '[data-kind="video"]'), cw = qs(media, '[data-kind="carrusel"]');
+    if (!iw || !vw || !cw) return;
+    iw.style.display = st.type === 'imagen' ? '' : 'none';
+    vw.style.display = st.type === 'video' ? '' : 'none';
+    cw.style.display = st.type === 'carrusel' ? '' : 'none';
+    if (st.type === 'imagen') {
+      var id = fig.getAttribute('data-fig'), host = qs(iw, '[data-imgslot]');
+      buildImageSlot(host, 'img_' + id, st.image, function (newMeta) { st.image = newMeta; saveFig(id, st); applyMedia(fig); refreshBar(fig); });
+    }
+    if (st.type === 'video') buildVideo(fig);
+    if (st.type === 'carrusel') buildCarousel(fig);
+  }
+
+  function refreshBar(fig) {
+    var st = fig._st, bar = qs(fig, '[data-fig-toolbar]');
+    if (!bar) return;
+    qsa(bar, '[data-lay]').forEach(function (b) { b.style.background = b.getAttribute('data-lay') === st.layout ? 'rgba(90,100,255,.4)' : 'transparent'; });
+    qsa(bar, '[data-typ]').forEach(function (b) { b.style.background = b.getAttribute('data-typ') === st.type ? 'rgba(90,100,255,.4)' : 'transparent'; });
+    var ctx = qs(bar, '[data-ctx]'); if (!ctx) return;
+    ctx.innerHTML = '';
+    function mk(label, fn, danger) { var b = document.createElement('button'); b.textContent = label; b.style.cssText = 'font:500 10.5px/1 Helvetica,Arial,sans-serif;color:' + (danger ? '#ff9b9b' : '#aeb8ff') + ';background:transparent;border:0;border-radius:6px;padding:7px 10px;cursor:pointer;white-space:nowrap'; b.addEventListener('click', fn); ctx.appendChild(b); }
+    var id = fig.getAttribute('data-fig');
+    if (st.type === 'imagen' && st.image) mk('Quitar imagen', function () { st.image = null; saveFig(id, st); applyMedia(fig); refreshBar(fig); }, true);
+    if (st.type === 'video') {
+      mk('URL\u2026', function () { promptVideo(fig); });
+      mk('Subir archivo\u2026', function () { pickLocalVideo(fig); });
+      if (st.video) mk('Quitar video', function () { st.video = null; saveFig(id, st); applyMedia(fig); refreshBar(fig); }, true);
+    }
+    if (st.type === 'carrusel') {
+      mk('+ Foto', function () { if (fig._st.slides < 8) { fig._st.slides++; saveFig(id, fig._st); buildCarousel(fig); } });
+      mk('\u2212 Foto', function () { if (fig._st.slides > 1) { fig._st.slides--; if (fig._st.cur >= fig._st.slides) fig._st.cur = 0; saveFig(id, fig._st); buildCarousel(fig); } });
+      if (fig._st.imgs && fig._st.imgs[fig._st.cur]) mk('Quitar actual', function () { fig._st.imgs[fig._st.cur] = null; saveFig(id, fig._st); buildCarouselSlide(fig, fig._st.cur); refreshBar(fig); }, true);
+    }
+    mk('Eliminar bloque', function () { st.hidden = true; saveFig(id, st); fig.style.display = 'none'; }, true);
+  }
+
+  // ---- Word-like text toolbar ----
+  function txtKey(el) { return el.getAttribute('data-txt-key'); }
+  function saveSty(el) {
+    var k = txtKey(el); if (!k) return;
+    try { localStorage.setItem('fwcL_sty_' + k, JSON.stringify({ size: el.style.fontSize || '', color: el.style.color || '', hidden: el.style.display === 'none' })); } catch (e) {}
+  }
+  function applySavedSty(el) {
+    if (EXPORTED) return; // baked HTML already carries the final inline styles
+    var k = txtKey(el); if (!k) return;
+    try {
+      var s = JSON.parse(localStorage.getItem('fwcL_sty_' + k) || 'null');
+      if (s) { if (s.size) el.style.fontSize = s.size; if (s.color) el.style.color = s.color; if (s.hidden) el.style.display = 'none'; }
+    } catch (e) {}
+  }
+  function positionBar(t) {
+    var r = t.getBoundingClientRect();
+    txtBar.style.display = 'flex';
+    txtBar.style.left = Math.max(8, r.left) + 'px';
+    txtBar.style.top = Math.max(8, r.top - 48) + 'px';
+  }
+  function setupTextToolbar(root) {
+    if (txtBar) return;
+    qsa(document, '#lect-txtbar').forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
+    txtBar = document.createElement('div');
+    txtBar.id = 'lect-txtbar';
+    txtBar.style.cssText = 'position:fixed;z-index:70;display:none;gap:3px;align-items:center;background:rgba(10,11,18,.95);border:1px solid rgba(255,255,255,.2);border-radius:9px;padding:5px;backdrop-filter:blur(6px)';
+    function mk(label, title, fn) {
+      var b = document.createElement('button');
+      b.textContent = label; b.title = title || '';
+      b.style.cssText = 'font:600 12px/1 Helvetica,Arial,sans-serif;color:#dfe2ea;background:transparent;border:0;border-radius:6px;padding:7px 9px;cursor:pointer';
+      b.addEventListener('pointerdown', function (e) { e.preventDefault(); });
+      b.addEventListener('click', fn);
+      txtBar.appendChild(b);
+      return b;
+    }
+    mk('A\u2212', 'Reducir tama\u00f1o', function () { if (!curTxt) return; var c = parseFloat(getComputedStyle(curTxt).fontSize) || 16; curTxt.style.fontSize = Math.max(10, c - 2) + 'px'; saveSty(curTxt); });
+    mk('A+', 'Aumentar tama\u00f1o', function () { if (!curTxt) return; var c = parseFloat(getComputedStyle(curTxt).fontSize) || 16; curTxt.style.fontSize = (c + 2) + 'px'; saveSty(curTxt); });
+    var bB = mk('B', 'Negrita', function () { document.execCommand('bold'); }); bB.style.fontWeight = '800';
+    var bI = mk('I', 'It\u00e1lica', function () { document.execCommand('italic'); }); bI.style.fontStyle = 'italic';
+    var bU = mk('S', 'Subrayado', function () { document.execCommand('underline'); }); bU.style.textDecoration = 'underline';
+    ['#ffffff', '#8f9bff', '#E63A1F', '#f9a04c'].forEach(function (cl) {
+      var b = document.createElement('button');
+      b.title = 'Color de fuente';
+      b.style.cssText = 'width:16px;height:16px;border-radius:50%;border:1px solid rgba(255,255,255,.45);background:' + cl + ';cursor:pointer;padding:0;margin:0 3px';
+      b.addEventListener('pointerdown', function (e) { e.preventDefault(); });
+      b.addEventListener('click', function () { if (curTxt) { curTxt.style.color = cl; saveSty(curTxt); } });
+      txtBar.appendChild(b);
+    });
+    var del = mk('\u2715 Eliminar', 'Eliminar bloque de texto', function () {
+      if (curTxt) { curTxt.style.display = 'none'; saveSty(curTxt); txtBar.style.display = 'none'; curTxt = null; }
+    });
+    del.style.color = '#ff9b9b';
+    document.body.appendChild(txtBar);
+    root.addEventListener('focusin', function (e) {
+      var t = e.target.closest ? e.target.closest('[data-edit-text],[data-side],figcaption[contenteditable]') : null;
+      if (t && editMode) { curTxt = t; positionBar(t); }
+    });
+    root.addEventListener('focusout', function () {
+      setTimeout(function () {
+        var ae = document.activeElement;
+        if (ae && txtBar.contains(ae)) return;
+        if (!ae || !ae.isContentEditable) txtBar.style.display = 'none';
+      }, 180);
+    });
+    window.addEventListener('scroll', function () { if (txtBar.style.display !== 'none' && curTxt) positionBar(curTxt); }, { passive: true });
+  }
+
+  function setupFigures(root) {
+    qsa(root, 'figure[data-fig]').forEach(function (fig) {
+      if (fig._st) return;
+      var id = fig.getAttribute('data-fig');
+      var initRaw = fig.getAttribute('data-fig-init');
+      var init = null; try { init = initRaw ? JSON.parse(initRaw) : null; } catch (e) {}
+      var st = Object.assign({ layout: 'centrado', width: 78, type: 'imagen', image: null, video: null, slides: 2, cur: 0, imgs: [], hidden: false }, init || {});
+      if (!EXPORTED) { try { var s = JSON.parse(localStorage.getItem('fwcL_fig_' + id) || 'null'); if (s && s.layout) st = Object.assign(st, s); } catch (e) {} }
+      fig._st = st;
+      fig.removeAttribute('data-fig-init');
+      if (st.hidden) fig.style.display = 'none';
+
+      var media0 = qs(fig, '[data-media]');
+      // Drop any toolbar/handle baked in by a browser "Guardar página como" — their JS
+      // listeners were lost on serialization; fresh ones are re-created below.
+      qsa(media0, '[data-fig-toolbar], [data-fig-handle]').forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
+      var imgWrap = qs(media0, '[data-kind="imagen"]');
+      if (!imgWrap) {
+        imgWrap = document.createElement('div'); imgWrap.setAttribute('data-kind', 'imagen');
+        var host = document.createElement('div'); host.setAttribute('data-imgslot', ''); host.style.cssText = 'width:100%;aspect-ratio:16/9';
+        imgWrap.appendChild(host);
+        media0.insertBefore(imgWrap, media0.firstChild);
+      }
+      var videoWrap = qs(media0, '[data-kind="video"]');
+      if (!videoWrap) { videoWrap = document.createElement('div'); videoWrap.setAttribute('data-kind', 'video'); videoWrap.style.display = 'none'; media0.appendChild(videoWrap); }
+      var carWrap = qs(media0, '[data-kind="carrusel"]');
+      if (!carWrap) { carWrap = document.createElement('div'); carWrap.setAttribute('data-kind', 'carrusel'); carWrap.style.display = 'none'; media0.appendChild(carWrap); }
+
+      var LAYOUTS = [['completo', 'Completo'], ['centrado', 'Centrado'], ['izquierda', 'Izquierda'], ['derecha', 'Derecha'], ['costados', 'Costados']];
+      var bar = document.createElement('div'); bar.setAttribute('data-fig-toolbar', '1');
+      bar.style.cssText = 'position:absolute;top:-38px;left:50%;transform:translateX(-50%);display:flex;gap:4px;background:rgba(10,11,18,.92);border:1px solid rgba(255,255,255,.16);border-radius:9px;padding:4px;z-index:20;opacity:0;pointer-events:none;transition:opacity .2s;backdrop-filter:blur(6px);white-space:nowrap';
+      LAYOUTS.forEach(function (pair) {
+        var key = pair[0], label = pair[1];
+        var b = document.createElement('button'); b.textContent = label; b.setAttribute('data-lay', key);
+        b.style.cssText = 'font:500 10.5px/1 Helvetica,Arial,sans-serif;letter-spacing:.04em;color:#dfe2ea;background:transparent;border:0;border-radius:6px;padding:7px 10px;cursor:pointer';
+        b.addEventListener('click', function () { st.layout = key; saveFig(id, st); applyLayout(fig); refreshBar(fig); });
+        bar.appendChild(b);
+      });
+      var sep1 = document.createElement('i'); sep1.style.cssText = 'width:1px;background:rgba(255,255,255,.18);margin:2px 3px'; bar.appendChild(sep1);
+      [['imagen', 'Imagen'], ['video', 'Video'], ['carrusel', 'Carrusel']].forEach(function (pair) {
+        var key = pair[0], label = pair[1];
+        var b = document.createElement('button'); b.textContent = label; b.setAttribute('data-typ', key);
+        b.style.cssText = 'font:500 10.5px/1 Helvetica,Arial,sans-serif;letter-spacing:.04em;color:#dfe2ea;background:transparent;border:0;border-radius:6px;padding:7px 10px;cursor:pointer';
+        b.addEventListener('click', function () {
+          st.type = key;
+          saveFig(id, st); applyMedia(fig); refreshBar(fig);
+          if (key === 'video' && !st.video) promptVideo(fig);
+        });
+        bar.appendChild(b);
+      });
+      var sep2 = document.createElement('i'); sep2.style.cssText = 'width:1px;background:rgba(255,255,255,.18);margin:2px 3px'; bar.appendChild(sep2);
+      var ctxWrap = document.createElement('span'); ctxWrap.setAttribute('data-ctx', '1'); ctxWrap.style.cssText = 'display:flex;gap:4px'; bar.appendChild(ctxWrap);
+      media0.appendChild(bar);
+
+      var handle = document.createElement('div'); handle.title = 'Arrastr\u00e1 para cambiar el ancho';
+      handle.style.cssText = 'position:absolute;right:-7px;top:50%;transform:translateY(-50%);width:14px;height:52px;border-radius:8px;background:rgba(10,11,18,.92);border:1px solid rgba(255,255,255,.2);cursor:ew-resize;z-index:21;opacity:0;transition:opacity .2s;display:flex;align-items:center;justify-content:center';
+      handle.innerHTML = '<div style="width:2px;height:26px;border-radius:2px;background:rgba(255,255,255,.55)"></div>';
+      handle.setAttribute('data-fig-handle', '1');
+      media0.appendChild(handle);
+      handle.addEventListener('pointerdown', function (ev) {
+        ev.preventDefault(); handle.setPointerCapture(ev.pointerId);
+        var startX = ev.clientX, startW = st.width, total = fig.parentElement.getBoundingClientRect().width || 800;
+        function mv(e2) { st.width = Math.round(Math.max(24, Math.min(100, startW + (e2.clientX - startX) / total * 100))); applyLayout(fig); }
+        function up() { handle.removeEventListener('pointermove', mv); handle.removeEventListener('pointerup', up); saveFig(id, st); }
+        handle.addEventListener('pointermove', mv); handle.addEventListener('pointerup', up);
+      });
+
+      // The toolbar floats 38px ABOVE the figure, so moving the pointer from the
+      // figure up to it crosses an empty strip and fires pointerleave. Hide with a
+      // cancelable delay (like the floating "+") so the options stay reachable.
+      var barTimer = null;
+      function showBar() { if (!editMode) return; clearTimeout(barTimer); bar.style.opacity = '1'; bar.style.pointerEvents = 'auto'; handle.style.opacity = '1'; }
+      function hideBarSoon() { clearTimeout(barTimer); barTimer = setTimeout(function () { bar.style.opacity = '0'; bar.style.pointerEvents = 'none'; handle.style.opacity = '0'; }, 700); }
+      fig.addEventListener('pointerenter', showBar);
+      fig.addEventListener('pointerleave', hideBarSoon);
+      bar.addEventListener('pointerenter', showBar);
+      bar.addEventListener('pointerleave', hideBarSoon);
+      handle.addEventListener('pointerenter', showBar);
+
+      qsa(fig, '[data-side]').forEach(function (side) {
+        var key = 'fwcL_side_' + id + '_' + side.getAttribute('data-side');
+        side.setAttribute('data-txt-key', 'side_' + id + '_' + side.getAttribute('data-side'));
+        applySavedSty(side);
+        if (!EXPORTED) { try { var v = localStorage.getItem(key); if (v) side.textContent = v; } catch (e) {} }
+        if (!side.textContent.trim()) { side.textContent = side.getAttribute('data-ph'); side._ph = true; side.style.opacity = '.4'; }
+        side.addEventListener('focus', function () { if (side._ph) { side.textContent = ''; side._ph = false; side.style.opacity = '1'; } });
+        side.addEventListener('blur', function () {
+          var v = side.textContent.trim();
+          try { localStorage.setItem(key, v); } catch (e) {}
+          if (!v) { side.textContent = side.getAttribute('data-ph'); side._ph = true; side.style.opacity = '.4'; }
+        });
+      });
+      var capEl = qs(fig, 'figcaption');
+      if (capEl) {
+        capEl.setAttribute('data-txt-key', 'cap_' + id); applySavedSty(capEl);
+        // In the published (locked) build, an untouched caption still shows the editor
+        // prompt "Epígrafe — hacé clic para editar" floating in empty space. Hide it.
+        if (LOCKED && /^Ep[ií]grafe\s*—\s*hac[eé] clic para editar$/i.test((capEl.textContent || '').trim())) {
+          capEl.style.display = 'none';
+        }
+      }
+
+      applyLayout(fig);
+      applyMedia(fig);
+      refreshBar(fig);
+    });
+  }
+
+  function setupEditableText(root) {
+    qsa(root, 'header, section[id], footer').forEach(function (container) {
+      var scopeId = container.id || container.tagName.toLowerCase();
+      var els = qsa(container, ':scope > p, :scope > h1, :scope > h2');
+      els.forEach(function (el, i) {
+        if (el.getAttribute('data-edit-text')) return;
+        var key = 'fwcL_txt_' + scopeId + '_' + i;
+        if (!EXPORTED) { try { var v = localStorage.getItem(key); if (v !== null) el.innerHTML = v; } catch (e) {} }
+        el.setAttribute('data-edit-text', '1');
+        el.setAttribute('data-txt-key', 'txt_' + scopeId + '_' + i);
+        applySavedSty(el);
+        el.addEventListener('blur', function () { try { localStorage.setItem(key, el.innerHTML); } catch (e) {} });
+      });
+    });
+  }
+
+  // ---- Insert new components (+ button) ----
+  function newAid(prefix) { return prefix + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+  function blockSkeleton(kind, aid) {
+    if (kind === 'texto') {
+      var p = document.createElement('p');
+      p.setAttribute('data-blk', aid);
+      p.style.cssText = 'font:300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body);color:var(--r-ink-soft);margin-bottom:1.35em;text-wrap:pretty';
+      p.textContent = 'Escribí acá tu texto…';
+      return p;
+    }
+    var fig = document.createElement('figure');
+    fig.setAttribute('data-fig', aid);
+    fig.style.cssText = 'margin:2em 0';
+    var l = document.createElement('div'); l.setAttribute('data-side', 'l'); l.setAttribute('contenteditable', 'true'); l.setAttribute('data-ph', 'Escribí acá el texto del costado izquierdo…'); l.style.cssText = 'display:none;font:300 15px/1.65 var(--r-body);color:var(--r-ink-soft);min-width:0';
+    var media = document.createElement('div'); media.setAttribute('data-media', ''); media.style.cssText = 'position:relative;min-width:0';
+    var r = document.createElement('div'); r.setAttribute('data-side', 'r'); r.setAttribute('contenteditable', 'true'); r.setAttribute('data-ph', 'Escribí acá el texto del costado derecho…'); r.style.cssText = 'display:none;font:300 15px/1.65 var(--r-body);color:var(--r-ink-soft);min-width:0';
+    var cap = document.createElement('figcaption'); cap.setAttribute('contenteditable', 'true'); cap.style.cssText = 'grid-column:1/-1;text-align:center;font:400 12.5px/1.5 var(--r-body);color:var(--r-ink-faint);margin-top:12px'; cap.textContent = 'Epígrafe — hacé clic para editar';
+    fig.appendChild(l); fig.appendChild(media); fig.appendChild(r); fig.appendChild(cap);
+    fig.setAttribute('data-fig-init', JSON.stringify({ layout: 'centrado', width: 78, type: kind, slides: 2, cur: 0 }));
+    return fig;
+  }
+  function sectionSkeleton(id) {
+    var sec = document.createElement('section');
+    sec.id = id;
+    sec.setAttribute('data-screen-label', 'Sección nueva');
+    sec.style.cssText = 'display:flow-root;padding-top:clamp(50px,9vh,110px)';
+    var divider = document.createElement('div'); divider.style.cssText = 'border-top:1px solid var(--r-hair);margin-bottom:30px';
+    var h2 = document.createElement('h2');
+    h2.style.cssText = 'font-family:var(--r-display);font-weight:700;font-size:clamp(28px,3.6vw,48px);line-height:1.06;letter-spacing:-.02em;margin-bottom:.7em;text-wrap:balance;color:var(--r-ink)';
+    h2.textContent = 'Nuevo título de sección';
+    var p = document.createElement('p');
+    p.style.cssText = 'font:300 clamp(16px,1.4vw,19.5px)/1.75 var(--r-body);color:var(--r-ink-soft);margin-bottom:1.35em;text-wrap:pretty';
+    p.textContent = 'Escribí acá tu texto…';
+    sec.appendChild(divider); sec.appendChild(h2); sec.appendChild(p);
+    return sec;
+  }
+  function insertMenu(anchorBtn, onPick) {
+    var m = document.createElement('div');
+    m.style.cssText = 'position:fixed;z-index:80;background:rgba(10,11,18,.97);border:1px solid rgba(255,255,255,.22);border-radius:10px;padding:6px;display:flex;flex-direction:column;gap:2px;backdrop-filter:blur(6px);min-width:150px';
+    var r = anchorBtn.getBoundingClientRect();
+    m.style.left = Math.max(8, r.left) + 'px'; m.style.top = (r.bottom + 8) + 'px';
+    [['texto', 'Texto'], ['imagen', 'Imagen'], ['video', 'Video'], ['carrusel', 'Carrusel']].forEach(function (pair) {
+      var b = document.createElement('button'); b.textContent = pair[1];
+      b.style.cssText = 'font:500 12.5px/1 Helvetica,Arial,sans-serif;color:#dfe2ea;background:transparent;border:0;border-radius:6px;padding:9px 12px;cursor:pointer;text-align:left';
+      b.addEventListener('mouseenter', function () { b.style.background = 'rgba(90,100,255,.25)'; });
+      b.addEventListener('mouseleave', function () { b.style.background = 'transparent'; });
+      b.addEventListener('click', function () { if (m.parentNode) document.body.removeChild(m); onPick(pair[0]); });
+      m.appendChild(b);
+    });
+    document.body.appendChild(m);
+    setTimeout(function () {
+      function outside(e) { if (!m.contains(e.target) && e.target !== anchorBtn) { if (m.parentNode) document.body.removeChild(m); document.removeEventListener('mousedown', outside); } }
+      document.addEventListener('mousedown', outside);
+    }, 0);
+  }
+  // A stable identifier for any block, so we can remember *where* an inserted
+  // component sits relative to its neighbours (used for session replay ordering).
+  function blockKey(el) {
+    return el.getAttribute('data-fig') || el.getAttribute('data-blk') || el.getAttribute('data-txt-key') || null;
+  }
+  function findByKey(section, key) {
+    if (!key) return null;
+    return qs(section, '[data-fig="' + key + '"]') || qs(section, '[data-blk="' + key + '"]') || qs(section, '[data-txt-key="' + key + '"]');
+  }
+  // Insert a new component before refNode (any block), or at the end of the
+  // section (before its inserter row) when refNode is null.
+  function insertBlockAt(root, section, kind, refNode) {
+    var aid = newAid('blk_');
+    var el = blockSkeleton(kind, aid);
+    if (refNode && refNode.parentNode === section) section.insertBefore(el, refNode);
+    else { var row = qs(section, '[data-inserter]'); if (row) section.insertBefore(el, row); else section.appendChild(el); }
+    var listKey = 'fwcL_blocks_' + section.id;
+    var list = []; try { list = JSON.parse(localStorage.getItem(listKey) || '[]'); } catch (e) {}
+    list.push({ kind: kind, aid: aid, before: refNode ? blockKey(refNode) : null });
+    try { localStorage.setItem(listKey, JSON.stringify(list)); } catch (e) {}
+    if (kind === 'texto') setupEditableText(root); else setupFigures(root);
+    applyEditMode(root);
+    return el;
+  }
+  function addSectionBlock(root, section, kind) { return insertBlockAt(root, section, kind, null); }
+  function addNewSection(root) {
+    var main = qs(root, 'main');
+    if (!main) return;
+    var id = newAid('sec_');
+    var sec = sectionSkeleton(id);
+    var row = qs(main, '[data-add-section]');
+    if (row) main.insertBefore(sec, row); else main.appendChild(sec);
+    var list = []; try { list = JSON.parse(localStorage.getItem('fwcL_sections') || '[]'); } catch (e) {}
+    list.push(id);
+    try { localStorage.setItem('fwcL_sections', JSON.stringify(list)); } catch (e) {}
+    setupEditableText(root);
+    setupInserters(root);
+    applyEditMode(root);
+  }
+  function replaySections(root) {
+    var main = qs(root, 'main');
+    if (!main) return;
+    var list = []; try { list = JSON.parse(localStorage.getItem('fwcL_sections') || '[]'); } catch (e) {}
+    list.forEach(function (id) { if (!document.getElementById(id)) main.appendChild(sectionSkeleton(id)); });
+  }
+  function replayBlocks(root) {
+    qsa(root, 'section[id]').forEach(function (section) {
+      var list = []; try { list = JSON.parse(localStorage.getItem('fwcL_blocks_' + section.id) || '[]'); } catch (e) {}
+      list.forEach(function (item) {
+        if (qs(section, '[data-fig="' + item.aid + '"], [data-blk="' + item.aid + '"]')) return;
+        var el = blockSkeleton(item.kind, item.aid);
+        var ref = item.before ? findByKey(section, item.before) : null;
+        var inserter = qs(section, '[data-inserter]');
+        if (ref && ref.parentNode === section) section.insertBefore(el, ref);
+        else if (inserter) section.insertBefore(el, inserter);
+        else section.appendChild(el);
+      });
+    });
+  }
+  function setupInserters(root) {
+    qsa(root, 'section[id]').forEach(function (section) {
+      // A browser "Guardar página como" bakes the inserter row into the HTML but
+      // drops its JS click listener. Remove any such stale row and (re)build a live one
+      // so "+ Agregar componente" always works, even on saved/re-opened copies.
+      qsa(section, '[data-inserter]:not([data-add-section])').forEach(function (n) {
+        if (n.parentNode === section) n.parentNode.removeChild(n);
+      });
+      section.setAttribute('data-inserter-added', '1');
+      var row = document.createElement('div');
+      row.setAttribute('data-inserter', '1');
+      row.style.cssText = 'display:none;justify-content:center;margin:34px 0 6px';
+      var btn = document.createElement('button');
+      btn.textContent = '+ Agregar componente';
+      btn.style.cssText = 'font:600 11.5px/1 Helvetica,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#aeb8ff;background:rgba(143,155,255,.12);border:1px dashed rgba(143,155,255,.5);border-radius:999px;padding:10px 18px;cursor:pointer';
+      btn.addEventListener('click', function () { insertMenu(btn, function (kind) { addSectionBlock(root, section, kind); }); });
+      row.appendChild(btn); section.appendChild(row);
+    });
+    var main = qs(root, 'main');
+    if (main) {
+      qsa(main, '[data-add-section]').forEach(function (n) {
+        if (n.parentNode === main) n.parentNode.removeChild(n);
+      });
+      main.setAttribute('data-add-section-added', '1');
+      var row2 = document.createElement('div');
+      row2.setAttribute('data-inserter', '1'); row2.setAttribute('data-add-section', '1');
+      row2.style.cssText = 'display:none;justify-content:center;margin:50px 0 10px';
+      var btn2 = document.createElement('button');
+      btn2.textContent = '+ Agregar sección';
+      btn2.style.cssText = 'font:600 12px/1 Helvetica,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:rgba(58,60,255,.22);border:1px dashed var(--r-acc2,#8f9bff);border-radius:999px;padding:12px 22px;cursor:pointer';
+      btn2.addEventListener('click', function () { addNewSection(root); });
+      row2.appendChild(btn2); main.appendChild(row2);
+    }
+  }
+
+  // Direct child blocks of a section that a new component can be inserted before.
+  function insertableChildren(section) {
+    return qsa(section, ':scope > h1, :scope > h2, :scope > h3, :scope > p, :scope > figure, :scope > [data-blk]');
+  }
+  // Floating "+" that follows the block under the cursor (edit mode only) and
+  // inserts a component right before it — so you can add at any height.
+  function setupHoverInserter(root) {
+    if (hoverPlus) return;
+    qsa(document, '#lect-plus').forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
+    hoverPlus = document.createElement('button');
+    hoverPlus.id = 'lect-plus';
+    hoverPlus.textContent = '+';
+    hoverPlus.title = 'Insertar un componente acá';
+    hoverPlus.style.cssText = 'position:fixed;z-index:65;display:none;width:32px;height:32px;border-radius:50%;border:1px solid var(--r-acc2,#8f9bff);background:rgba(58,60,255,.95);color:#fff;font:400 21px/1 Helvetica,Arial,sans-serif;cursor:pointer;padding:0;box-shadow:0 2px 12px rgba(0,0,0,.5)';
+    // Hide with a cancelable delay, so moving the pointer from a block toward the
+    // "+" (across the empty gutter) doesn't make it vanish before you can click it.
+    var hideTimer = null;
+    function scheduleHide() { clearTimeout(hideTimer); hideTimer = setTimeout(function () { hoverPlus.style.display = 'none'; }, 500); }
+    function cancelHide() { clearTimeout(hideTimer); }
+    hoverPlus.addEventListener('mouseenter', cancelHide);
+    hoverPlus.addEventListener('mouseleave', scheduleHide);
+    hoverPlus.addEventListener('click', function (e) {
+      e.preventDefault(); e.stopPropagation();
+      if (!hoverSection) return;
+      var section = hoverSection, ref = hoverRefNode;
+      insertMenu(hoverPlus, function (kind) { insertBlockAt(root, section, kind, ref); });
+    });
+    document.body.appendChild(hoverPlus);
+    root.addEventListener('mousemove', function (e) {
+      if (!editMode) { hoverPlus.style.display = 'none'; return; }
+      var section = e.target && e.target.closest ? e.target.closest('section[id]') : null;
+      // Off any section (e.g. crossing the left gutter toward the "+"): keep it
+      // visible briefly instead of hiding immediately.
+      if (!section || !root.contains(section)) { scheduleHide(); return; }
+      var blocks = insertableChildren(section), ref = null, refRect = null;
+      for (var i = 0; i < blocks.length; i++) {
+        var rct = blocks[i].getBoundingClientRect();
+        if (e.clientY < rct.bottom) { ref = blocks[i]; refRect = rct; break; }
+      }
+      if (!ref) { scheduleHide(); return; }
+      cancelHide();
+      hoverSection = section; hoverRefNode = ref;
+      hoverPlus.style.left = Math.max(6, refRect.left - 40) + 'px';
+      hoverPlus.style.top = Math.max(6, refRect.top - 4) + 'px';
+      hoverPlus.style.display = 'block';
+    });
+    root.addEventListener('mouseleave', scheduleHide);
+  }
+
+  function applyEditMode(root) {
+    var on = editMode;
+    qsa(root, '[data-edit-text], [data-side], figcaption[contenteditable]').forEach(function (el) { el.contentEditable = on ? 'true' : 'false'; el.style.cursor = on ? 'text' : ''; });
+    qsa(root, '[data-fig-toolbar]').forEach(function (el) { el.style.display = on ? 'flex' : 'none'; });
+    qsa(root, '[data-fig-handle]').forEach(function (el) { el.style.display = on ? 'flex' : 'none'; });
+    qsa(root, '[data-kind="imagen"] [data-imgslot]').forEach(function (el) { el.style.pointerEvents = on ? 'auto' : 'none'; });
+    qsa(root, '[data-inserter]').forEach(function (el) { el.style.display = on ? 'flex' : 'none'; });
+    qsa(root, 'figure[data-fig]').forEach(function (fig) {
+      fig.style.outline = on ? '1px dashed rgba(143,155,255,.35)' : 'none';
+      fig.style.outlineOffset = '6px';
+      if (fig._st && fig._st.type === 'carrusel') showSlide(fig);
+    });
+    if (!on && txtBar) { txtBar.style.display = 'none'; curTxt = null; }
+    if (!on && hoverPlus) hoverPlus.style.display = 'none';
+    if (editBtn) {
+      editBtn.textContent = on ? '\u25cf Editando (Ctrl+Shift+E)' : 'Editar (Ctrl+Shift+E)';
+      editBtn.style.borderColor = on ? 'var(--r-acc,#3a3cff)' : 'rgba(255,255,255,.22)';
+    }
+  }
+
+  function setupEditToggle(root) {
+    // Remove any pre-existing (or serialized-in) toggle/export buttons so they don't accumulate on re-open.
+    qsa(document, '#lect-edit-toggle, #lect-export').forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
+    function onKey(e) { if (e.shiftKey && e.ctrlKey && (e.key === 'E' || e.key === 'e')) { e.preventDefault(); editMode = !editMode; applyEditMode(root); } }
+    window.addEventListener('keydown', onKey);
+    var b = document.createElement('button'); b.id = 'lect-edit-toggle';
+    b.style.cssText = 'position:fixed;top:14px;left:14px;z-index:60;font:600 11.5px/1 Helvetica,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(10,11,18,.85);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:11px 18px;cursor:pointer;backdrop-filter:blur(6px)';
+    b.addEventListener('click', function () { editMode = !editMode; applyEditMode(root); });
+    document.body.appendChild(b);
+    editBtn = b;
+
+    var d = document.createElement('button'); d.id = 'lect-export';
+    d.textContent = 'Descargar versión final';
+    d.style.cssText = 'position:fixed;top:14px;right:14px;z-index:60;font:600 11.5px/1 Helvetica,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#0b0c12;background:#f9a04c;border:0;border-radius:999px;padding:11px 18px;cursor:pointer;backdrop-filter:blur(6px)';
+    d.addEventListener('click', function () { exportSite(); });
+    document.body.appendChild(d);
+  }
+
+  // ---- Export a self-contained, publishable copy (index.html + assets/) as a ZIP ----
+  function ensureJSZip() {
+    return new Promise(function (res, rej) {
+      if (window.JSZip) return res(window.JSZip);
+      var s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
+      s.onload = function () { window.JSZip ? res(window.JSZip) : rej(new Error('JSZip no disponible')); };
+      s.onerror = function () { rej(new Error('No se pudo cargar JSZip. Necesitás conexión a internet para exportar.')); };
+      document.head.appendChild(s);
+    });
+  }
+  async function exportSite() {
+    var btn = document.getElementById('lect-export');
+    var orig = btn ? btn.textContent : '';
+    try {
+      if (btn) { btn.textContent = 'Preparando…'; btn.disabled = true; btn.style.opacity = '.7'; }
+      var JSZipLib = await ensureJSZip();
+      var zip = new JSZipLib();
+      var root = document.getElementById('lect-root') || document.body;
+
+      // 1) Resolve every managed figure's media into files inside the zip's assets/ folder.
+      var resolved = {};
+      var figs = qsa(root, 'figure[data-fig]');
+      for (var i = 0; i < figs.length; i++) {
+        var fig = figs[i], id = fig.getAttribute('data-fig'), st = fig._st;
+        if (!st) continue;
+        var out = Object.assign({}, st);
+        if (st.type === 'imagen' && st.image) {
+          out.image = await resolveMediaAsset('img_' + id, st.image, true, zip);
+        }
+        if (st.type === 'video' && st.video) {
+          out.video = (typeof st.video === 'string') ? st.video : await resolveMediaAsset('vid_' + id, st.video, true, zip);
+        }
+        if (st.type === 'carrusel') {
+          out.imgs = [];
+          for (var n = 0; n < (st.slides || 0); n++) {
+            var m = st.imgs && st.imgs[n];
+            out.imgs[n] = m ? await resolveMediaAsset('img_' + id + '_' + n, m, true, zip) : null;
+          }
+        }
+        // Hide media blocks that ended up empty, so the published version stays clean.
+        var hasMedia = (out.type === 'imagen' && out.image) ||
+          (out.type === 'video' && out.video) ||
+          (out.type === 'carrusel' && out.imgs && out.imgs.some(function (x) { return !!x; }));
+        if (!hasMedia) out.hidden = true;
+        resolved[id] = out;
+      }
+
+      // 1b) Re-bundle media that is already referenced by an assets/ path (i.e. we're re-editing
+      //     an already-published build). Those weren't re-added above because they have no blob.
+      var assetPaths = {};
+      Object.keys(resolved).forEach(function (id) {
+        var s = resolved[id], vals = [s.image, s.video].concat(s.imgs || []);
+        vals.forEach(function (v) { if (typeof v === 'string' && v.indexOf('assets/') === 0) assetPaths[v] = 1; });
+      });
+      for (var p in assetPaths) {
+        if (zip.file(p)) continue;
+        try { var r = await fetch(p); if (r.ok) zip.file(p, await r.arrayBuffer()); } catch (e) {}
+      }
+
+      // 2) Clone the whole document and bake the resolved state into it.
+      var clone = document.documentElement.cloneNode(true);
+      clone.setAttribute('data-fwc-locked', '1'); // published build: render-only, no edit UI
+      qsa(clone, '#lect-edit-toggle, #lect-export, #lect-txtbar, #lect-plus, [data-inserter]').forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
+      // Drop dead/duplicate floating toolbars (fixed, z-index:70) left over from previous saves.
+      qsa(clone, 'body > div').forEach(function (dv) { if (/z-index:\s*70/.test(dv.getAttribute('style') || '')) { if (dv.parentNode) dv.parentNode.removeChild(dv); } });
+      qsa(clone, 'figure[data-fig]').forEach(function (fc) {
+        var id = fc.getAttribute('data-fig'), st = resolved[id];
+        if (!st) return;
+        qsa(fc, '[data-fig-toolbar], [data-fig-handle]').forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
+        fc.setAttribute('data-fig-init', JSON.stringify(st));
+        var media = fc.querySelector('[data-media]');
+        if (media) media.innerHTML = '<div data-kind="imagen"><div data-imgslot style="width:100%;aspect-ratio:16/9"></div></div><div data-kind="video" style="display:none"></div><div data-kind="carrusel" style="display:none"></div>';
+      });
+      qsa(clone, '[contenteditable="true"]').forEach(function (n) { n.setAttribute('contenteditable', 'false'); });
+
+      // 3) Serialize + download.
+      var html = '<!DOCTYPE html>\n' + clone.outerHTML;
+      zip.file('index.html', html);
+      // Keep the saved Google Fonts stylesheet so the site looks identical offline of localhost.
+      try {
+        var css = await (await fetch('./index_files/css2')).text();
+        zip.file('index_files/css2', css);
+      } catch (e) {}
+      var outBlob = await zip.generateAsync({ type: 'blob' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(outBlob);
+      a.download = 'fwc-2026-sitio.zip';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 5000);
+    } catch (e) {
+      alert('No se pudo exportar el sitio.\n\n' + (e && e.message ? e.message : e));
+    } finally {
+      if (btn) { btn.textContent = orig || 'Descargar versión final'; btn.disabled = false; btn.style.opacity = '1'; }
+    }
+  }
+
+  Editor.init = function (root) {
+    root = root || document.getElementById('lect-root') || document.body;
+    if (root._fwcEditorInit) return;
+    root._fwcEditorInit = true;
+    // A published (locked) build can be re-opened for editing by adding #editar to the URL.
+    var forceEdit = location.hash === '#editar' || /[?&]editar(=|&|$)/i.test(location.search);
+    var isExported = document.documentElement.hasAttribute('data-fwc-locked');
+    EXPORTED = isExported;
+    LOCKED = isExported && !forceEdit;
+    // localStorage replay only makes sense in the original design tool, where blocks
+    // are added to a fresh template. In an exported file everything is already baked
+    // into the HTML, and replaying would DUPLICATE blocks/videos — worse on file://,
+    // where every local copy shares one localStorage. So skip it for exported builds.
+    if (!isExported) {
+      replaySections(root);
+      replayBlocks(root);
+    }
+    setupFigures(root);
+    setupEditableText(root);
+    if (!LOCKED) {
+      // Locked (published) build: render only, no edit UI, no keyboard shortcut, no dropzones.
+      setupInserters(root);
+      setupHoverInserter(root);
+      setupEditToggle(root);
+      setupTextToolbar(root);
+    }
+    applyEditMode(root);
+    watchAV(root);
+    // Re-run the float anti-overlap pass whenever heights can change:
+    // window resizes and media (video/img) finishing to load.
+    scheduleFloatFix();
+    window.addEventListener('resize', scheduleFloatFix);
+    document.addEventListener('loadedmetadata', function (e) { if (e.target && e.target.tagName === 'VIDEO') scheduleFloatFix(); }, true);
+    document.addEventListener('load', function (e) { if (e.target && e.target.tagName === 'IMG') scheduleFloatFix(); }, true);
+  };
+  Editor.isEditMode = function () { return editMode; };
+  Editor.resolveMediaAsset = resolveMediaAsset;
+
+  window.FWCEditor = Editor;
+})();
+
+</script>
+<script>
+window.FWCEditor.init(document.getElementById("lect-root"));
+</script>
+
+</body></html>
