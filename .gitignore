@@ -5,3 +5,6 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Carpetas de export del editor (descomprimidas)
+fwc-2026-sitio*/
